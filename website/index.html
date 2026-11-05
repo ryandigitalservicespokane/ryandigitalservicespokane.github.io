@@ -169,7 +169,7 @@ dialog iframe{width:min(1000px,92vw);aspect-ratio:16/9;border:0;border-radius:6p
 .mail{display:inline-block;font-size:clamp(20px,3.4vw,36px);font-weight:700;color:#fff;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px;margin:12px 0 28px;word-break:break-all}
 .socials{display:flex;gap:20px}
 .socials a{color:#fff;font-weight:600}
-footer{padding:28px 0;font-size:14px;color:var(--muted)}
+.cform{display:grid;gap:14px;max-width:560px;margin:0 0 36px}.cform label{display:grid;gap:6px;font-weight:600;font-size:16px;color:#fff}.cform input,.cform textarea{font:inherit;font-size:16px;padding:12px 14px;border-radius:10px;border:2px solid transparent;color:#1a1d24;background:#fff}.cform input:focus,.cform textarea:focus{outline:none;border-color:#ffc93c}.btn.send{background:#fff;color:#2f4bff;border-color:#fff;justify-self:start}.btn.send:hover{background:#ffc93c;border-color:#ffc93c;color:#1a1d24}.thanks{display:none;font-weight:700;color:#fff!important}.sent .thanks{display:block}.sent .cform{display:none} footer{padding:28px 0;font-size:14px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -194,7 +194,7 @@ footer{padding:28px 0;font-size:14px;color:var(--muted)}
       <h1>More customers in the door, less busywork behind the counter.</h1>
       <p class="lede">I'm Ryan, a freelance marketer in Spokane. I run ads, build email programs, design the things you need printed and posted, and set up automations that pull your reports and handle the repetitive work.</p>
       <div class="cta-row">
-        <a class="btn" href="mailto:ryan.digitalservicespokane@gmail.com?subject=Free%20marketing%20review">Get a free review</a>
+        <a class="btn" href="#contact">Get a free review</a>
         <a class="btn ghost" href="#work">See my work</a>
       </div>
       <p class="industries">I've done this work for <strong>casinos, hotels, restaurants, concert venues, spas, cannabis brands</strong> and <strong>national e-commerce brands</strong>. Different businesses, same job: reach the right people and give them a reason to show up.</p>
@@ -263,7 +263,7 @@ footer{padding:28px 0;font-size:14px;color:var(--muted)}
         <h3>Not sure where to start?</h3>
         <p>Send me your website or ad account and I'll reply with three specific things I'd fix first. Free, no strings attached.</p>
       </div>
-      <a class="btn" href="mailto:ryan.digitalservicespokane@gmail.com?subject=Free%20marketing%20review">Ask for a free review</a>
+      <a class="btn" href="#contact">Ask for a free review</a>
     </div>
   </div>
 </section>
@@ -378,7 +378,7 @@ footer{padding:28px 0;font-size:14px;color:var(--muted)}
   <div class="wrap">
     <h2>Let's talk about your business.</h2>
     <p>Tell me what you're working on, or just send your website and I'll send back a few ideas.</p>
-    <a class="mail" href="mailto:ryan.digitalservicespokane@gmail.com">ryan.digitalservicespokane@gmail.com</a>
+    <a class="mail" href="mailto:ryan.digitalservicespokane@gmail.com">ryan.digitalservicespokane@gmail.com</a><form class="cform" id="cform" action="https://formsubmit.co/ryan.digitalservicespokane@gmail.com" method="POST"><input type="hidden" name="_subject" value="New inquiry from your website"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://ryandigitalservicespokane.github.io/website/?sent=1#contact"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"><label>Your name<input name="name" required></label><label>Your email<input type="email" name="email" required></label><label>Business name or website<input name="business"></label><label>What can I help with?<textarea name="message" rows="4" required></textarea></label><button class="btn send" type="submit">Send message</button></form><p class="thanks" id="thanks">Thanks! Your message is on its way. I'll get back to you within a day.</p>
     <div class="socials">
       <a href="https://www.linkedin.com/in/ryandotpng/" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/ryandotpng/" rel="noopener">Instagram</a>
@@ -441,7 +441,7 @@ document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
   render(t.dataset.cat);
 });
 render('pack');
-document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('yr').textContent=new Date().getFullYear();if(/sent=1/.test(location.search))document.getElementById('contact').classList.add('sent');
 </script>
 </body>
 </html>
