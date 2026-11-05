@@ -76,11 +76,12 @@ h2{font-size:clamp(32px,4.2vw,48px);line-height:1.08;letter-spacing:-.025em;marg
 
 /* proof */
 .proof{padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 .proof b{display:block;font-size:clamp(26px,3vw,36px);letter-spacing:-.025em;line-height:1.1;margin-bottom:6px}
 .proof span{color:var(--muted);font-size:16px}
-.proof div:first-child b{color:var(--cobalt)}
-@media(max-width:820px){.proof-grid{grid-template-columns:1fr;gap:20px}}
+.proof div:nth-child(-n+2) b{color:var(--cobalt)}
+@media(max-width:960px){.proof-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.proof-grid{grid-template-columns:1fr;gap:20px}}
 
 /* services */
 #services{background:var(--mist)}
@@ -196,7 +197,7 @@ footer{padding:28px 0;font-size:14px;color:var(--muted)}
         <a class="btn" href="mailto:ryan.digitalservicespokane@gmail.com?subject=Free%20marketing%20review">Get a free review</a>
         <a class="btn ghost" href="#work">See my work</a>
       </div>
-      <p class="industries">I've done this work for <strong>casinos, hotels, restaurants, spas, cannabis brands</strong> and a <strong>national e-commerce company</strong>.</p>
+      <p class="industries">I've done this work for <strong>casinos, hotels, restaurants, spas, cannabis brands</strong> and <strong>national e-commerce brands</strong>.</p>
     </div>
     <div class="collage" aria-hidden="true">
       <img class="c1" src="img/rd-112.jpg" alt="">
@@ -209,9 +210,10 @@ footer{padding:28px 0;font-size:14px;color:var(--muted)}
 
 <section class="proof" aria-label="Results">
   <div class="wrap proof-grid">
-    <div><b>$23,000</b><span>in revenue from a single email campaign I designed and sent</span></div>
+    <div><b>$591,194</b><span>in incremental Meta ad revenue generated in 2025</span></div>
+    <div><b>$1,885,008</b><span>in email and automation revenue generated in 2025</span></div>
     <div><b>A full product line</b><span>of cannabis packaging for Root Down, voted Best Local Cannabis Brand in 2025</span></div>
-    <div><b>Casinos to cannabis</b><span>plus hotels, restaurants, spas, a birth center and a national e-commerce brand</span></div>
+    <div><b>Casinos to cannabis</b><span>plus hotels, restaurants, spas, a birth center and multiple national e-commerce brands</span></div>
   </div>
 </section>
 
@@ -223,7 +225,7 @@ footer{padding:28px 0;font-size:14px;color:var(--muted)}
     <div class="svc">
       <h3>Paid ads</h3>
       <div>
-        <p>Meta (Facebook & Instagram) and Google ads set up to bring in customers, then watched and adjusted every week.</p>
+        <p>Meta (Facebook & Instagram), Google, Amazon, Reddit and LinkedIn ads set up to bring in customers, then watched and adjusted every week.</p>
         <ul><li>Account audit or new campaign setup</li><li>Ongoing management with a monthly results summary</li><li>Ad creative designed alongside the campaigns</li></ul>
       </div>
       <div class="price"><b>$500/mo</b><span>management, starting at · ad spend paid directly by you</span></div>
@@ -332,7 +334,6 @@ footer{padding:28px 0;font-size:14px;color:var(--muted)}
     <div class="tabs" role="tablist" aria-label="Work categories">
       <button class="tab" role="tab" aria-selected="true" data-cat="pack">Packaging</button>
       <button class="tab" role="tab" aria-selected="false" data-cat="design">Design</button>
-      <button class="tab" role="tab" aria-selected="false" data-cat="logo">Logos</button>
       <button class="tab" role="tab" aria-selected="false" data-cat="email">Email</button>
       <button class="tab" role="tab" aria-selected="false" data-cat="ads">Paid ads</button>
       <button class="tab" role="tab" aria-selected="false" data-cat="photo">Photography</button>
@@ -396,10 +397,10 @@ footer{padding:28px 0;font-size:14px;color:var(--muted)}
 <script>
 const U='https://smithryanportfolio.wordpress.com/wp-content/uploads/';
 const W={
- pack:"img/rd-bestof2025.jpg img/rd-123.jpg img/rd-129.jpg img/rd-131.jpg img/rd-133.jpg img/rd-135.jpg img/rd-139.jpg img/rd-141.jpg img/rd-144.jpg img/rd-146.jpg img/rd-148.jpg img/rd-1.jpg img/rd-12.jpg img/rd-13.jpg img/rd-15.jpg img/rd-17.jpg img/rd-18.jpg img/rd-110.jpg img/rd-111.jpg img/rd-112.jpg img/rd-113.jpg img/rd-121.jpg img/rd-122.jpg img/rd-124.jpg img/rd-125.jpg img/rd-127.jpg img/rd-130.jpg img/rd-132.jpg img/rd-134.jpg img/rd-138.jpg img/rd-140.jpg img/rd-143.jpg img/rd-145.jpg img/rd-147.jpg img/cloudchaser-pack.jpg 2024/09/superlemonhaze_newdie_v3.jpg 2024/09/grapepie_newdie_v3.jpg",
- design:"img/ecom-23.jpg img/ecom-1.jpg img/ecom-24.jpg img/ecom-29.jpg img/ecom-5.jpg 2024/09/cloudchasersvape_mock3.png 2024/09/cloudchasersvape_mock4.png 2024/09/stc-1024_aug2023_socialmedia_24kmagicannounce.png 2024/09/stc-1024_aug2023_socialmedia_floridaannounce.png 2024/09/socialdropkick_soldout.png 2024/09/stc-1024_aug2023_socialmedia_ellekingannounce.png 2024/09/sportsbook_odds.png 2024/09/table-tents-update-1.jpg 2024/09/table-tents-update-2.jpg 2024/09/dame-time.png 2024/09/cruise_postcard-1.png 2024/09/cruise_postcard-2.png 2024/09/display_4x3_portrait.png 2024/09/gamble_responsibly-1.jpg 2024/09/gamble_responsibly-2.jpg 2024/09/3peaksflyer.jpg 2024/09/tacovado_breakfastmenu_8-272.png 2024/09/tacovado_breakfastmenu_8-27.png 2024/09/tacovado_mainmenu_letter_8-276.png 2024/09/tacovado_veganmenu.png 2024/09/cover_image5.png 2024/09/stc-1004_aug2023_houseadvance.png 2024/09/stc-1004_aug2023_houseadvance2.png 2024/09/stc-1004_aug2023_houseadvance3.png 2024/09/stc-1004_aug2023_houseadvance4.png 2024/09/stc-1004_aug2023_houseadvance5.png 2024/09/stc-1004_aug2023_houseadvance6.png 2025/03/2024-igfb-posts.png 2025/03/1.png 2025/03/customer-review-instagram.png 2025/03/5.png 2025/03/7.png 2025/03/5-1.png 2025/03/25.png 2025/03/cable-academy.png",
- logo:"img/logo-srbc.png img/logo-gridiron.png",
- email:"2025/03/screenshot-2025-03-06-at-7.18.58e280afpm.png 2025/03/screenshot-2025-03-06-at-7.20.00e280afpm.png 2025/03/screenshot-2025-03-06-at-7.19.38e280afpm.png 2025/03/screenshot-2025-03-06-at-7.20.42e280afpm.png 2025/03/screenshot-2025-03-06-at-7.21.09e280afpm.png 2025/03/screenshot-2025-03-06-at-7.21.25e280afpm.png 2025/03/screenshot-2025-03-06-at-7.20.57e280afpm.png 2025/03/screenshot-2025-03-06-at-7.22.45e280afpm.png 2025/03/screenshot-2025-03-06-at-7.22.30e280afpm.png 2025/03/screenshot-2025-03-06-at-7.28.01e280afpm.png 2025/03/screenshot-2025-03-06-at-7.27.35e280afpm.png 2025/03/screenshot-2025-03-06-at-7.28.41e280afpm.png 2025/03/ilovethe90semailoffer.jpg 2025/03/screenshot-2025-03-06-at-7.24.03e280afpm.png 2025/03/screenshot-2025-03-06-at-7.26.29e280afpm.png",
+ pack:"img/rd-bestof2025.jpg rd-poster-hashburger.jpg img/rd-123.jpg img/rd-129.jpg img/rd-131.jpg img/rd-133.jpg img/rd-135.jpg img/rd-139.jpg img/rd-141.jpg img/rd-144.jpg img/rd-146.jpg img/rd-148.jpg img/rd-1.jpg img/rd-12.jpg img/rd-13.jpg img/rd-15.jpg img/rd-17.jpg img/rd-18.jpg img/rd-110.jpg img/rd-111.jpg img/rd-112.jpg img/rd-113.jpg img/rd-121.jpg img/rd-122.jpg img/rd-124.jpg img/rd-127.jpg img/rd-130.jpg img/rd-132.jpg img/rd-134.jpg img/rd-138.jpg img/rd-140.jpg img/rd-143.jpg img/rd-145.jpg img/rd-147.jpg img/cloudchaser-pack.jpg 2024/09/superlemonhaze_newdie_v3.jpg 2024/09/grapepie_newdie_v3.jpg",
+ design:"img/ecom-23.jpg img/ecom-1.jpg img/ecom-24.jpg img/ecom-29.jpg img/ecom-5.jpg img/logo-srbc.png img/logo-gridiron.png 2024/09/cloudchasersvape_mock3.png 2024/09/cloudchasersvape_mock4.png 2024/09/stc-1024_aug2023_socialmedia_24kmagicannounce.png 2024/09/stc-1024_aug2023_socialmedia_floridaannounce.png 2024/09/socialdropkick_soldout.png 2024/09/stc-1024_aug2023_socialmedia_ellekingannounce.png 2024/09/sportsbook_odds.png 2024/09/table-tents-update-1.jpg 2024/09/table-tents-update-2.jpg 2024/09/dame-time.png 2024/09/cruise_postcard-1.png 2024/09/cruise_postcard-2.png 2024/09/display_4x3_portrait.png 2024/09/gamble_responsibly-1.jpg 2024/09/gamble_responsibly-2.jpg 2024/09/3peaksflyer.jpg 2024/09/tacovado_breakfastmenu_8-272.png 2024/09/tacovado_breakfastmenu_8-27.png 2024/09/tacovado_mainmenu_letter_8-276.png 2024/09/tacovado_veganmenu.png 2024/09/cover_image5.png 2024/09/stc-1004_aug2023_houseadvance.png 2024/09/stc-1004_aug2023_houseadvance2.png 2024/09/stc-1004_aug2023_houseadvance3.png 2024/09/stc-1004_aug2023_houseadvance4.png 2024/09/stc-1004_aug2023_houseadvance5.png 2024/09/stc-1004_aug2023_houseadvance6.png 2025/03/2024-igfb-posts.png 2025/03/1.png 2025/03/customer-review-instagram.png 2025/03/5.png 2025/03/7.png 2025/03/5-1.png 2025/03/25.png 2025/03/cable-academy.png",
+
+ email:"email-23k.jpg 2025/03/screenshot-2025-03-06-at-7.18.58e280afpm.png 2025/03/screenshot-2025-03-06-at-7.20.00e280afpm.png 2025/03/screenshot-2025-03-06-at-7.19.38e280afpm.png 2025/03/screenshot-2025-03-06-at-7.20.42e280afpm.png 2025/03/screenshot-2025-03-06-at-7.21.09e280afpm.png 2025/03/screenshot-2025-03-06-at-7.21.25e280afpm.png 2025/03/screenshot-2025-03-06-at-7.20.57e280afpm.png 2025/03/screenshot-2025-03-06-at-7.22.45e280afpm.png 2025/03/screenshot-2025-03-06-at-7.22.30e280afpm.png 2025/03/screenshot-2025-03-06-at-7.28.01e280afpm.png 2025/03/screenshot-2025-03-06-at-7.27.35e280afpm.png 2025/03/screenshot-2025-03-06-at-7.28.41e280afpm.png 2025/03/ilovethe90semailoffer.jpg 2025/03/screenshot-2025-03-06-at-7.24.03e280afpm.png 2025/03/screenshot-2025-03-06-at-7.26.29e280afpm.png",
  ads:"2024/09/screenshot-62.png 2024/09/screenshot-65.png 2024/09/screenshot-61.png 2025/03/screenshot-2025-03-06-at-7.48.50e280afpm.png 2025/03/screenshot-2025-03-06-at-7.49.15e280afpm.png 2025/03/screenshot-2025-03-06-at-7.48.59e280afpm.png 2025/03/screenshot-2025-03-06-at-7.48.39e280afpm.png 2025/03/screenshot-2025-03-06-at-7.48.21e280afpm.png 2025/03/screenshot-2025-03-06-at-7.48.11e280afpm.png 2025/03/screenshot-2025-03-06-at-7.26.04e280afpm.png 2026/01/screenshot-2026-01-26-at-2.34.48-pm-1.png",
  photo:"2024/09/searedsalmon_july2023-1.jpg 2024/09/bbqporkribs_july2023-2.jpg 2024/09/chopped_salad_july2023-1.jpg 2024/09/food_6_27-1.jpg 2024/09/biggame_2024-3.jpg 2024/09/058a4029.jpg 2024/09/an8a7288.jpg 2024/09/hunterhayes-4.jpg 2024/09/hunterhayes-2.jpg 2024/09/an8a3415.jpg 2024/09/an8a3515.jpg 2024/09/058a3278.jpg 2024/09/rocio-19.png 2024/09/rocio-16.png 2024/09/qgroup_grad_2023-23.png 2024/09/london.png 2024/09/blakeheashot3.png 2024/09/lilly-13.png 2024/09/copy-of-marlee_grad_2406-3.jpg 2024/09/blakeandaidan_grad_2023-9.png"
 };
@@ -411,8 +412,8 @@ function render(cat){
   grid.innerHTML='';
   const items = cat==='video'
     ? VIDEOS.map(id=>({thumb:`https://img.youtube.com/vi/${id}/hqdefault.jpg`,video:id,alt:'Video project'}))
-    : W[cat].split(' ').map(p=>p.startsWith('img/')
-        ? {thumb:p,full:p,alt:LABEL[cat],logo:cat==='logo'}
+    : W[cat].split(' ').map(p=>!/^20\d\d\//.test(p)
+        ? {thumb:p,full:p,alt:p.includes('/logo-')?'Logo':LABEL[cat],logo:p.includes('/logo-')}
         : {thumb:U+p+'?w=640',full:U+p+'?w=1600',alt:LABEL[cat]});
   for(const it of items){
     const b=document.createElement('button');
