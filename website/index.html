@@ -378,10 +378,9 @@ dialog iframe{width:min(1000px,92vw);aspect-ratio:16/9;border:0;border-radius:6p
   <div class="wrap">
     <h2>Let's talk about your business.</h2>
     <p>Tell me what you're working on, or just send your website and I'll send back a few ideas.</p>
-    <a class="mail" href="mailto:ryan.digitalservicespokane@gmail.com">ryan.digitalservicespokane@gmail.com</a><form class="cform" id="cform" action="https://formsubmit.co/ryan.digitalservicespokane@gmail.com" method="POST"><input type="hidden" name="_subject" value="New inquiry from your website"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://ryandigitalservicespokane.github.io/website/?sent=1#contact"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"><label>Your name<input name="name" required></label><label>Your email<input type="email" name="email" required></label><label>Business name or website<input name="business"></label><label>What can I help with?<textarea name="message" rows="4" required></textarea></label><button class="btn send" type="submit">Send message</button></form><p class="thanks" id="thanks">Thanks! Your message is on its way. I'll get back to you within a day.</p>
+    <a class="mail" href="mailto:ryan.digitalservicespokane@gmail.com">ryan.digitalservicespokane@gmail.com</a><iframe name="hf" id="hf" title="form" style="display:none"></iframe><form class="cform" id="cform" action="https://docs.google.com/forms/d/e/1FAIpQLScRlQKAxS654vcQLcaBXyi_xYrfq_PVGwXmce6XlFr9coAE_A/formResponse" method="POST" target="hf"><input type="text" id="hp" style="display:none" tabindex="-1" autocomplete="off"><label>Your name<input name="entry.1873697728" required></label><label>Your email<input type="email" name="entry.970658160" required></label><label>Business name or website<input name="entry.1198172665"></label><label>What can I help with?<textarea name="entry.1686757041" rows="4" required></textarea></label><button class="btn send" type="submit">Send message</button></form><p class="thanks" id="thanks">Thanks! Your message is on its way. I'll get back to you within a day.</p>
     <div class="socials">
       <a href="https://www.linkedin.com/in/ryandotpng/" rel="noopener">LinkedIn</a>
-      <a href="https://www.instagram.com/ryandotpng/" rel="noopener">Instagram</a>
     </div>
   </div>
 </section>
@@ -441,7 +440,7 @@ document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
   render(t.dataset.cat);
 });
 render('pack');
-document.getElementById('yr').textContent=new Date().getFullYear();if(/sent=1/.test(location.search))document.getElementById('contact').classList.add('sent');
+document.getElementById('yr').textContent=new Date().getFullYear();if(/sent=1/.test(location.search))document.getElementById('contact').classList.add('sent');var cf=document.getElementById('cform');cf.addEventListener('submit',function(e){if(document.getElementById('hp').value){e.preventDefault();return}setTimeout(function(){document.getElementById('contact').classList.add('sent');cf.reset()},700)});
 </script>
 </body>
 </html>
