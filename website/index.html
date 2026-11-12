@@ -202,6 +202,18 @@ h1{font-size:clamp(38px,4.6vw,58px);line-height:1.04}
 .proof div:nth-child(n+3) b{font-size:clamp(20px,2vw,24px)}
 @media(max-width:900px){.stack{height:440px;max-width:560px}}
 @media(max-width:520px){.stack{height:380px}.s-alert{width:80%;font-size:13px}}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:48px;border:1px solid #343947;border-radius:18px;padding:36px 40px;margin:8px 0 28px;background:linear-gradient(135deg,#232733,#1a1d24)}
+.calc h3{font-size:24px;margin:0 0 20px;letter-spacing:-.01em}
+.calc label{display:flex;justify-content:space-between;gap:12px;font-size:15px;font-weight:600;color:#d6dae3;margin-top:16px}
+.calc output{color:var(--sun);font-weight:800;font-size:17px}
+.calc input[type=range]{width:100%;margin:10px 0 2px;accent-color:var(--sun);height:6px;cursor:pointer}
+.calc-out{display:flex;flex-direction:column;justify-content:center}
+.calc .big{font-size:clamp(40px,5vw,60px);font-weight:800;letter-spacing:-.03em;line-height:1;margin:0 0 14px;color:#fff}
+.calc .big span{color:var(--sun)}
+.calc .mid{font-size:19px;color:#d6dae3;margin:0 0 12px}.calc .mid b{color:#fff}
+.calc .small{font-size:13px;color:#8d93a3;margin:0 0 20px}
+.btn.sun{background:var(--sun);border-color:var(--sun);color:var(--ink);justify-self:start;align-self:flex-start}.btn.sun:hover{background:#fff;border-color:#fff}
+@media(max-width:960px){.calc{grid-template-columns:1fr;padding:28px;gap:28px}}
 </style>
 </head>
 <body>
@@ -309,6 +321,23 @@ h1{font-size:clamp(38px,4.6vw,58px);line-height:1.04}
   <div class="wrap">
     <h2>Tell me what takes up most of your week. I'll tell you if I can automate it.</h2>
 <p class="intro">Copying numbers between tabs, chasing the same follow-ups, rebuilding the same report every Monday. I build systems that do that work for you, on accounts you own, for a fixed price you see before anything starts.</p>
+<div class="calc" id="time-calc">
+<div class="calc-in">
+<h3>How much time is the busywork costing you?</h3>
+<label for="c_hours">Hours a week spent on repetitive tasks <output id="o_hours">5</output></label>
+<input type="range" id="c_hours" min="1" max="30" value="5">
+<label for="c_people">People doing them <output id="o_people">1</output></label>
+<input type="range" id="c_people" min="1" max="10" value="1">
+<label for="c_rate">What an hour of their time is worth <output id="o_rate">$25</output></label>
+<input type="range" id="c_rate" min="15" max="150" step="5" value="25">
+</div>
+<div class="calc-out" aria-live="polite">
+<p class="big"><span id="r_hours">250</span> hours a year</p>
+<p class="mid">That's about <b id="r_days">31</b> full workdays and <b id="r_cost">$6,250</b> of paid time spent on work a system could handle.</p>
+<p class="small">Based on 50 working weeks and 8-hour days. Not every task can be automated; the free assessment tells you which ones can.</p>
+<a class="btn sun" href="#time-audit" id="c_go">Find out what I can take off your plate</a>
+</div>
+</div>
 <div class="taudit" id="time-audit">
 <div class="taudit-copy">
 <h3>Free automation assessment</h3>
@@ -559,6 +588,12 @@ document.getElementById('yr').textContent=new Date().getFullYear();if(/sent=1/.t
 ;(function(){var f=document.getElementById('tform'),h=document.getElementById('hf2'),b=document.getElementById('t_send'),e=document.getElementById('terr'),p=false,t;
 f.addEventListener('submit',function(){document.getElementById('t_msg').value='[Automation assessment] Task: '+document.getElementById('t_task').value+' | How often: '+document.getElementById('t_freq').value+' | Tools: '+(document.getElementById('t_tools').value||'not given');p=true;e.hidden=true;b.disabled=true;b.textContent='Sending…';t=setTimeout(function(){if(!p)return;p=false;b.disabled=false;b.textContent='Get my free assessment';e.hidden=false},10000)});
 h.addEventListener('load',function(){if(!p)return;p=false;clearTimeout(t);f.style.display='none';document.getElementById('tthanks').hidden=false})})();
+;(function(){var h=document.getElementById('c_hours'),p=document.getElementById('c_people'),r=document.getElementById('c_rate');if(!h)return;
+function f(n){return n.toLocaleString('en-US')}
+function u(){var hrs=h.value*p.value*50;document.getElementById('o_hours').textContent=h.value;document.getElementById('o_people').textContent=p.value;document.getElementById('o_rate').textContent='$'+r.value;
+document.getElementById('r_hours').textContent=f(hrs);document.getElementById('r_days').textContent=f(Math.round(hrs/8));document.getElementById('r_cost').textContent='$'+f(hrs*r.value)}
+[h,p,r].forEach(function(e){e.addEventListener('input',u)});u();
+document.getElementById('c_go').addEventListener('click',function(){var t=document.getElementById('t_tools');var tk=document.getElementById('t_task');setTimeout(function(){tk&&tk.focus({preventScroll:true})},600);if(tk&&!tk.value)tk.placeholder='About '+h.value+' hours a week on... (describe the task)'})})();
 </script>
 </body>
 </html>
