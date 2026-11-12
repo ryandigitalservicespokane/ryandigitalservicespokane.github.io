@@ -269,6 +269,33 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
 .grid img{width:100%;height:auto}
 .grid .logo{padding:24px}
 .stack .card{box-shadow:0 12px 28px -16px rgba(25,33,31,.35)}
+
+/* services cards */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.scard{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.scard:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(25,33,31,.45)}
+.sthumb{height:220px;background:var(--ink);overflow:hidden}
+.sthumb img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s}
+.sthumb.top img{object-position:top}
+.scard:hover .sthumb img{transform:scale(1.04)}
+.sthumb.mock{display:grid;place-items:center;background:linear-gradient(135deg,#232C29,#19211F)}
+.malert{background:#fff;border-radius:12px;padding:14px 16px;width:78%;font-size:14px;line-height:1.45;box-shadow:0 14px 30px -14px rgba(0,0,0,.6);transform:rotate(-1.5deg)}
+.malert .mh{display:flex;gap:10px;align-items:center;margin-bottom:8px}.malert .mb{width:30px;height:30px;border-radius:8px;background:var(--sun);flex:none}
+.malert small{color:var(--muted);font-size:12px}.malert ul{margin:6px 0 0;padding-left:18px}.malert em{font-style:normal;color:#2E6B4E;font-weight:600}
+.sbody{padding:28px 30px 30px;display:flex;flex-direction:column;flex:1}
+.slabel{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.scard h3{font-size:28px;line-height:1.12;letter-spacing:-.02em;margin:8px 0 14px}
+.sproof{margin:0 0 16px;padding:12px 14px;background:var(--paper);border-radius:10px;font-size:16px}
+.sproof b{color:var(--cobalt);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:20px;letter-spacing:-.01em}
+.scard ul{margin:0 0 22px;padding-left:20px}.scard li{margin:5px 0}
+.sfoot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--line)}
+.sfoot b{display:block;font-size:22px;font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em}.sfoot span{font-size:14px;color:var(--muted)}
+#services .audit{margin-top:24px}
+#services h2{font-size:clamp(36px,5vw,60px);max-width:14em}
+@media(max-width:860px){.svc-grid{grid-template-columns:1fr}.sthumb{height:180px}.sbody{padding:24px}}
+.sthumb.illo{height:220px;background:#19211F}.sthumb.illo svg{display:block;width:100%;height:100%}.scard:hover .sthumb.illo svg{transform:none}
+.sthumb.photo{height:220px;background:var(--ink)}.sthumb.photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+.sthumb.art{height:auto;aspect-ratio:1100/440;position:relative;overflow:hidden;background:#19211F}
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%2319211F%22%2F%3E%3Cpath%20d%3D%22M17%2037V33C17%2022%2024%2016%2032%2016S47%2022%2047%2033V37Z%22%20fill%3D%22%23E8B858%22%2F%3E%3Crect%20x%3D%2217%22%20y%3D%2233%22%20width%3D%2230%22%20height%3D%224%22%20fill%3D%22%23F8F4EA%22%2F%3E%3Crect%20x%3D%228%22%20y%3D%2240%22%20width%3D%2248%22%20height%3D%226%22%20rx%3D%223%22%20fill%3D%22%23E8B858%22%2F%3E%3C%2Fsvg%3E">
 </head>
@@ -339,43 +366,185 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
 
 <section id="services">
   <div class="wrap">
-    <h2>Services</h2>
-    <p class="intro">Every project gets a fixed price up front, so you know the cost before anything starts. These are starting points; I'll quote your project after a quick conversation.</p>
+    <span class="eyebrow">Services</span>
+    <h2>Four ways I can grow your business.</h2>
+    <p class="intro">Each one comes with real results behind it and a fixed price up front.</p>
+    <div class="svc-grid">
 
-    <div class="svc">
-      <h3>Paid ads</h3>
-      <div>
-        <p>Meta (Facebook & Instagram), Google, Amazon, Reddit and LinkedIn ads set up to bring in customers, then watched and adjusted every week.</p>
-        <ul><li>Account audit or new campaign setup</li><li>Ongoing management with a monthly results summary</li><li>Ad creative designed alongside the campaigns</li></ul>
-      </div>
-      <div class="price"><b>From $500/mo</b><span>for management. Ad spend is paid directly by you.</span></div>
-    </div>
+      <article class="scard">
+        <div class="sthumb art" role="img" aria-label="Illustration: a sponsored social ad next to a campaign results card"><div class="art-in" aria-hidden="true" style="width: 1100px; height: 440px; position: absolute; left: 0; top: 0; transform-origin: 0 0; overflow: hidden; background-color: #19211F; background-image: radial-gradient(#2A3532 1.3px, transparent 1.3px); background-size: 26px 26px; font-family: 'DM Sans', system-ui, sans-serif; color: #F8F4EA">
+<div style="position: absolute; left: 170px; top: 46px; width: 250px; height: 500px; transform: rotate(-5deg); background: #0F1412; border-radius: 38px; padding: 10px; box-sizing: border-box; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.65)">
+<div style="width: 100%; height: 100%; background: #FFFFFF; border-radius: 30px; overflow: hidden; color: #19211F; display: flex; flex-direction: column">
+<div style="height: 26px; display: flex; justify-content: center; align-items: center"><div style="width: 70px; height: 8px; border-radius: 999px; background: #19211F"></div></div>
+<div style="display: flex; align-items: center; gap: 9px; padding: 8px 14px">
+<div style="width: 30px; height: 30px; border-radius: 50%; background: #E8B858"></div>
+<div style="display: flex; flex-direction: column"><span style="font-size: 13px; font-weight: 700">Your Business</span><span style="font-size: 11px; color: #595E55">Sponsored</span></div>
+</div>
+<div style="height: 230px; background: #A8422D; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px; box-sizing: border-box">
+<div style="position: absolute; right: -40px; top: -40px; width: 170px; height: 170px; border-radius: 50%; background: #E8B858"></div>
+<div style="position: absolute; right: 30px; top: 30px; width: 70px; height: 70px; border-radius: 50%; background: #F1D79C"></div>
+<span style="position: relative; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 30px; line-height: 1; letter-spacing: -0.02em; color: #F8F4EA">This weekend only</span>
+<span style="position: relative; font-size: 13px; color: #F3DDD5; margin-top: 6px">Book a table in two taps</span>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #F8F4EA">
+<span style="font-size: 12px; color: #595E55">yourbusiness.com</span>
+<span style="font-size: 12px; font-weight: 700; color: #FFFFFF; background: #A8422D; padding: 6px 12px; border-radius: 999px">Book now</span>
+</div>
+<div style="display: flex; gap: 14px; padding: 12px 14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#19211F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"></path></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#19211F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-5A8 8 0 1 1 21 12z"></path></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#19211F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"></path><path d="M22 2 15 22l-4-9-9-4z"></path></svg></div>
+<div style="padding: 0 14px; display: flex; flex-direction: column; gap: 7px">
+<div style="height: 8px; width: 80%; border-radius: 4px; background: #DDD5C3"></div>
+<div style="height: 8px; width: 55%; border-radius: 4px; background: #DDD5C3"></div>
+</div>
 
-    <div class="svc">
-      <h3>Email marketing</h3>
-      <div>
-        <p>Emails that go out on their own when someone signs up, abandons a cart or hasn't visited in a while, plus regular campaigns that bring people back.</p>
-        <ul><li>Welcome, abandoned-cart and win-back flows</li><li>Campaign design, copy and sending</li><li>Klaviyo, Mailchimp and similar platforms</li></ul>
-      </div>
-      <div class="price"><b>From $650</b><span>per automated flow. Campaigns from $450/mo.</span></div>
-    </div>
+</div>
+</div>
+<div style="position: absolute; left: 560px; top: 64px; width: 360px; transform: rotate(2deg); background: #FFFFFF; color: #19211F; border-radius: 16px; padding: 22px 24px; box-sizing: border-box; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.65)">
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 20px">Campaign results</span><span style="font-size: 12px; font-weight: 600; color: #8A6514; background: #F1D79C; padding: 3px 9px; border-radius: 999px">sample</span></div>
+<div style="display: flex; align-items: flex-end; gap: 8px; height: 110px; margin: 18px 0 14px; border-bottom: 1px solid #DDD5C3; padding-bottom: 2px"><div style="flex: 1; height: 34px; border-radius: 5px 5px 2px 2px; background: #F1D79C"></div><div style="flex: 1; height: 42px; border-radius: 5px 5px 2px 2px; background: #F1D79C"></div><div style="flex: 1; height: 40px; border-radius: 5px 5px 2px 2px; background: #F1D79C"></div><div style="flex: 1; height: 58px; border-radius: 5px 5px 2px 2px; background: #F1D79C"></div><div style="flex: 1; height: 66px; border-radius: 5px 5px 2px 2px; background: #F1D79C"></div><div style="flex: 1; height: 80px; border-radius: 5px 5px 2px 2px; background: #E8B858"></div><div style="flex: 1; height: 104px; border-radius: 5px 5px 2px 2px; background: #C9952F"></div></div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span style="color: #595E55">New customers</span><span style="display: flex; align-items: center; gap: 4px; font-weight: 700; color: #2E6B4E"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2E6B4E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg> up</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span style="color: #595E55">Cost per customer</span><span style="display: flex; align-items: center; gap: 4px; font-weight: 700; color: #2E6B4E"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2E6B4E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10"></path><path d="M17 8v9H8"></path></svg> down</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span style="color: #595E55">Ads that wore out</span><span style="font-weight: 700">Swapped weekly</span></div>
+</div>
+</div>
+<div style="position: absolute; left: 600px; top: 358px; transform: rotate(-1deg); background: #3A3422; color: #E8B858; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; padding: 7px 13px; border-radius: 999px">META · GOOGLE · AMAZON · REDDIT</div>
+</div></div>
+        <div class="sbody">
+          <span class="slabel">Paid ads</span>
+          <h3>Ads that bring in customers, not just clicks.</h3>
+          <p class="sproof"><b>$591,194</b> in incremental Meta ad revenue in 2025</p>
+          <ul><li>Meta, Google, Amazon, Reddit and LinkedIn</li><li>Audit or new campaign setup</li><li>Weekly tuning and a monthly results summary</li></ul>
+          <div class="sfoot"><div><b>From $500/mo</b><span>Ad spend paid directly by you</span></div><a class="btn" href="#contact">Ask about ads</a></div>
+        </div>
+      </article>
 
-    <div class="svc">
-      <h3>Design</h3>
-      <div>
-        <p>Social posts, menus, flyers, table tents, product labels, ad creative and logos, designed to get a response, not just to look nice.</p>
-        <ul><li>Social media graphic packs</li><li>Print: menus, flyers, signage, labels</li><li>Logos and simple brand kits</li></ul>
-      </div>
-      <div class="price"><b>From $325</b><span>for 5 social graphics. Logos from $350.</span></div>
-    </div>
+      <article class="scard">
+        <div class="sthumb art" role="img" aria-label="Illustration: an inbox of automated emails next to a welcome email"><div class="art-in" aria-hidden="true" style="width: 1100px; height: 440px; position: absolute; left: 0; top: 0; transform-origin: 0 0; overflow: hidden; background-color: #19211F; background-image: radial-gradient(#2A3532 1.3px, transparent 1.3px); background-size: 26px 26px; font-family: 'DM Sans', system-ui, sans-serif; color: #F8F4EA">
+<div style="position: absolute; left: 140px; top: 40px; width: 250px; height: 500px; transform: rotate(-4deg); background: #0F1412; border-radius: 38px; padding: 10px; box-sizing: border-box; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.65)">
+<div style="width: 100%; height: 100%; background: #FFFFFF; border-radius: 30px; overflow: hidden; color: #19211F; display: flex; flex-direction: column">
+<div style="height: 26px; display: flex; justify-content: center; align-items: center"><div style="width: 70px; height: 8px; border-radius: 999px; background: #19211F"></div></div>
+<div style="padding: 6px 14px 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 22px">Inbox</div>
+<div style="display: flex; gap: 9px; align-items: center; padding: 11px 12px; background: #FBF3DF; border-bottom: 1px solid #EFE8D8">
+<div style="width: 8px; height: 8px; border-radius: 50%; background: #A8422D; flex: none"></div><div style="width: 32px; height: 32px; border-radius: 50%; background: #19211F; color: #E8B858; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex: none">Y</div>
+<div style="display: flex; flex-direction: column; min-width: 0; flex: 1">
+<div style="display: flex; justify-content: space-between"><span style="font-size: 12px; font-weight: 700">Your Shop</span><span style="font-size: 10px; color: #595E55">9:02</span></div>
+<span style="font-size: 12px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Welcome in. Here's 10% off</span>
+<span style="font-size: 11px; color: #595E55; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Thanks for signing up. Your code...</span>
+</div>
+</div>
+<div style="display: flex; gap: 9px; align-items: center; padding: 11px 12px; background: #FFFFFF; border-bottom: 1px solid #EFE8D8">
+<div style="width: 8px; flex: none"></div><div style="width: 32px; height: 32px; border-radius: 50%; background: #19211F; color: #E8B858; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex: none">Y</div>
+<div style="display: flex; flex-direction: column; min-width: 0; flex: 1">
+<div style="display: flex; justify-content: space-between"><span style="font-size: 12px; font-weight: 700">Your Shop</span><span style="font-size: 10px; color: #595E55">Tue</span></div>
+<span style="font-size: 12px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Still thinking it over?</span>
+<span style="font-size: 11px; color: #595E55; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">You left something in your cart...</span>
+</div>
+</div>
+<div style="display: flex; gap: 9px; align-items: center; padding: 11px 12px; background: #FFFFFF; border-bottom: 1px solid #EFE8D8">
+<div style="width: 8px; flex: none"></div><div style="width: 32px; height: 32px; border-radius: 50%; background: #19211F; color: #E8B858; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex: none">Y</div>
+<div style="display: flex; flex-direction: column; min-width: 0; flex: 1">
+<div style="display: flex; justify-content: space-between"><span style="font-size: 12px; font-weight: 700">Your Shop</span><span style="font-size: 10px; color: #595E55">Mar 3</span></div>
+<span style="font-size: 12px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">It's been a while</span>
+<span style="font-size: 11px; color: #595E55; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">We saved you a little something...</span>
+</div>
+</div>
+<div style="display: flex; gap: 9px; align-items: center; padding: 11px 12px; background: #FFFFFF; border-bottom: 1px solid #EFE8D8">
+<div style="width: 8px; flex: none"></div><div style="width: 32px; height: 32px; border-radius: 50%; background: #19211F; color: #E8B858; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex: none">Y</div>
+<div style="display: flex; flex-direction: column; min-width: 0; flex: 1">
+<div style="display: flex; justify-content: space-between"><span style="font-size: 12px; font-weight: 700">Your Shop</span><span style="font-size: 10px; color: #595E55">Feb 27</span></div>
+<span style="font-size: 12px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">New this week</span>
+<span style="font-size: 11px; color: #595E55; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Three things just landed...</span>
+</div>
+</div>
 
-    <div class="svc">
-      <h3>Automation, AI & custom tools</h3>
-      <div>
-        <p>The behind-the-scenes work that eats your week, built to run on its own. <a href="#automation">See how it works</a>.</p>
-        <ul><li>Reports and dashboards that build themselves</li><li>Inquiry sorting, follow-ups and review requests</li><li>Inventory alerts, invoices and moving data between your tools</li><li>AI that sorts messages and drafts replies for you to approve</li></ul>
-      </div>
-      <div class="price"><b>From $500</b><span>per build, priced by scope. Maintenance from $149/mo.</span></div>
+</div>
+</div>
+<div style="position: absolute; left: 450px; top: 52px; width: 330px; transform: rotate(2.5deg); background: #FFFFFF; color: #19211F; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.65)">
+<div style="background: #E8B858; padding: 14px 22px; display: flex; justify-content: space-between; align-items: center"><span style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.06em">YOUR SHOP</span><span style="font-size: 11px; font-weight: 600">sample</span></div>
+<div style="padding: 22px">
+<div style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 30px; line-height: 1.05; letter-spacing: -0.02em">Welcome in.<br>Here's 10% off.</div>
+<div style="display: flex; flex-direction: column; gap: 7px; margin: 16px 0 18px"><div style="height: 8px; width: 92%; border-radius: 4px; background: #EFE8D8"></div><div style="height: 8px; width: 78%; border-radius: 4px; background: #EFE8D8"></div><div style="height: 8px; width: 60%; border-radius: 4px; background: #EFE8D8"></div></div>
+<div style="display: flex; align-items: center; justify-content: space-between"><span style="font-size: 14px; font-weight: 700; color: #FFFFFF; background: #A8422D; padding: 10px 18px; border-radius: 999px">Shop now</span><span style="font-family: monospace; font-size: 14px; font-weight: 700; border: 2px dashed #C9952F; padding: 6px 10px; border-radius: 6px">HELLO10</span></div>
+</div>
+</div>
+<div style="position: absolute; left: 850px; top: 110px; display: flex; flex-direction: column; gap: 30px">
+<div style="position: absolute; left: 6px; top: 12px; bottom: 12px; width: 2px; background: #34403C"></div>
+<div style="display: flex; align-items: center; gap: 12px"><div style="width: 14px; height: 14px; border-radius: 50%; background: #E8B858; border: 3px solid #19211F; box-shadow: 0 0 0 2px #E8B858; flex: none"></div><div style="display: flex; flex-direction: column"><span style="font-size: 12px; color: #A8A99E; font-weight: 600; letter-spacing: 0.04em">DAY 0</span><span style="font-size: 16px; font-weight: 600">Welcome</span></div></div><div style="display: flex; align-items: center; gap: 12px"><div style="width: 14px; height: 14px; border-radius: 50%; background: #C9952F; border: 3px solid #19211F; box-shadow: 0 0 0 2px #C9952F; flex: none"></div><div style="display: flex; flex-direction: column"><span style="font-size: 12px; color: #A8A99E; font-weight: 600; letter-spacing: 0.04em">DAY 3</span><span style="font-size: 16px; font-weight: 600">Follow-up</span></div></div><div style="display: flex; align-items: center; gap: 12px"><div style="width: 14px; height: 14px; border-radius: 50%; background: #A8422D; border: 3px solid #19211F; box-shadow: 0 0 0 2px #A8422D; flex: none"></div><div style="display: flex; flex-direction: column"><span style="font-size: 12px; color: #A8A99E; font-weight: 600; letter-spacing: 0.04em">DAY 30</span><span style="font-size: 16px; font-weight: 600">Win-back</span></div></div>
+</div>
+<div style="position: absolute; left: 850px; top: 46px; transform: rotate(0deg); background: #3A3422; color: #E8B858; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; padding: 7px 13px; border-radius: 999px">SENDS ON ITS OWN</div>
+</div></div>
+        <div class="sbody">
+          <span class="slabel">Email marketing</span>
+          <h3>Emails that sell while you sleep.</h3>
+          <p class="sproof"><b>$1,885,008</b> in attributed email and automation revenue in 2025</p>
+          <ul><li>Welcome, abandoned-cart and win-back flows</li><li>Campaign design, copy and sending</li><li>Klaviyo, Mailchimp and similar platforms</li></ul>
+          <div class="sfoot"><div><b>From $650</b><span>Per flow · campaigns from $450/mo</span></div><a class="btn" href="#contact">Ask about email</a></div>
+        </div>
+      </article>
+
+      <article class="scard">
+        <div class="sthumb art" role="img" aria-label="Illustration: a printed brunch menu, a social post, a product tag and brand colors"><div class="art-in" aria-hidden="true" style="width: 1100px; height: 440px; position: absolute; left: 0; top: 0; transform-origin: 0 0; overflow: hidden; background-color: #19211F; background-image: radial-gradient(#2A3532 1.3px, transparent 1.3px); background-size: 26px 26px; font-family: 'DM Sans', system-ui, sans-serif; color: #F8F4EA">
+<div style="position: absolute; left: 150px; top: 36px; width: 270px; height: 400px; transform: rotate(-5deg); background: #FBF8F1; color: #19211F; border-radius: 6px; padding: 26px 24px; box-sizing: border-box; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.65)">
+<div style="text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #A8422D">SAT &amp; SUN · 8 TO 2</div>
+<div style="text-align: center; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -0.02em; margin: 6px 0 4px">Weekend<br>Brunch</div>
+<div style="height: 2px; background: #19211F; margin: 12px 30px 16px"></div>
+<div style="display: flex; flex-direction: column; gap: 11px"><div style="display: flex; align-items: baseline; gap: 6px; font-size: 13px"><span style="font-weight: 600">Huevos rancheros</span><span style="flex: 1; border-bottom: 2px dotted #C9B98F; transform: translateY(-3px)"></span><span style="font-weight: 700">14</span></div><div style="display: flex; align-items: baseline; gap: 6px; font-size: 13px"><span style="font-weight: 600">Lemon ricotta pancakes</span><span style="flex: 1; border-bottom: 2px dotted #C9B98F; transform: translateY(-3px)"></span><span style="font-weight: 700">12</span></div><div style="display: flex; align-items: baseline; gap: 6px; font-size: 13px"><span style="font-weight: 600">Smoked salmon toast</span><span style="flex: 1; border-bottom: 2px dotted #C9B98F; transform: translateY(-3px)"></span><span style="font-weight: 700">15</span></div><div style="display: flex; align-items: baseline; gap: 6px; font-size: 13px"><span style="font-weight: 600">Chilaquiles verdes</span><span style="flex: 1; border-bottom: 2px dotted #C9B98F; transform: translateY(-3px)"></span><span style="font-weight: 700">13</span></div><div style="display: flex; align-items: baseline; gap: 6px; font-size: 13px"><span style="font-weight: 600">Seasonal fruit bowl</span><span style="flex: 1; border-bottom: 2px dotted #C9B98F; transform: translateY(-3px)"></span><span style="font-weight: 700">8</span></div></div>
+<div style="text-align: center; font-size: 10px; color: #595E55; margin-top: 18px; letter-spacing: 0.06em">SAMPLE MENU</div>
+</div>
+<div style="position: absolute; left: 430px; top: 64px; width: 260px; height: 260px; transform: rotate(3.5deg); background: #A8422D; border-radius: 12px; padding: 26px; box-sizing: border-box; overflow: hidden; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.65)">
+<div style="position: absolute; left: -50px; bottom: -70px; width: 220px; height: 220px; border-radius: 50%; background: #E8B858"></div>
+<div style="position: absolute; left: 70px; bottom: 30px; width: 90px; height: 90px; border-radius: 50%; background: #F1D79C"></div>
+<span style="position: relative; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #F3DDD5">NOW OPEN</span>
+<div style="position: relative; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 40px; line-height: 0.95; letter-spacing: -0.03em; color: #F8F4EA; margin-top: 8px">Sundays,<br>too.</div>
+</div>
+<div style="position: absolute; left: 720px; top: 150px; width: 190px; height: 250px; transform: rotate(-3deg); background: #F1D79C; color: #19211F; border-radius: 14px 14px 10px 10px; padding: 34px 20px 20px; box-sizing: border-box; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.65)">
+<div style="position: absolute; left: 50%; top: 12px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: #19211F"></div>
+<div style="font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-align: center">SMALL BATCH</div>
+<div style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 30px; line-height: 1; text-align: center; margin: 10px 0">Honey<br>Oat</div>
+<div style="height: 1px; background: #19211F; margin: 12px 10px"></div>
+<div style="font-size: 11px; text-align: center; line-height: 1.5">Baked fresh daily<br>Net wt. 12 oz</div>
+</div>
+<div style="position: absolute; left: 950px; top: 60px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 10px"><div style="width: 34px; height: 34px; border-radius: 50%; background: #A8422D; border: 2px solid #34403C"></div><span style="font-family: monospace; font-size: 12px; color: #A8A99E">#A8422D</span></div><div style="display: flex; align-items: center; gap: 10px"><div style="width: 34px; height: 34px; border-radius: 50%; background: #E8B858; border: 2px solid #34403C"></div><span style="font-family: monospace; font-size: 12px; color: #A8A99E">#E8B858</span></div><div style="display: flex; align-items: center; gap: 10px"><div style="width: 34px; height: 34px; border-radius: 50%; background: #F1D79C; border: 2px solid #34403C"></div><span style="font-family: monospace; font-size: 12px; color: #A8A99E">#F1D79C</span></div><div style="display: flex; align-items: center; gap: 10px"><div style="width: 34px; height: 34px; border-radius: 50%; background: #FBF8F1; border: 2px solid #34403C"></div><span style="font-family: monospace; font-size: 12px; color: #A8A99E">#FBF8F1</span></div>
+</div>
+<div style="position: absolute; left: 878px; top: 262px; white-space: nowrap; transform: rotate(0deg); background: #3A3422; color: #E8B858; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; padding: 7px 13px; border-radius: 999px">PRINT · SOCIAL · LABELS</div>
+</div></div>
+        <div class="sbody">
+          <span class="slabel">Design</span>
+          <h3>Design that gets a response, not just a nod.</h3>
+          <p class="sproof"><b>A full packaging line</b> for Root Down, voted Best Local Cannabis Brand 2025</p>
+          <ul><li>Social graphics and ad creative</li><li>Menus, flyers, signage and labels</li><li>Logos and simple brand kits</li></ul>
+          <div class="sfoot"><div><b>From $325</b><span>5 social graphics · logos from $350</span></div><a class="btn" href="#contact">Ask about design</a></div>
+        </div>
+      </article>
+
+      <article class="scard">
+        <div class="sthumb art" role="img" aria-label="Illustration: an inquiries sheet feeding an instant good-fit alert"><div class="art-in" aria-hidden="true" style="width: 1100px; height: 440px; position: absolute; left: 0; top: 0; transform-origin: 0 0; overflow: hidden; background-color: #19211F; background-image: radial-gradient(#2A3532 1.3px, transparent 1.3px); background-size: 26px 26px; font-family: 'DM Sans', system-ui, sans-serif; color: #F8F4EA">
+<div style="position: absolute; left: 110px; top: 54px; width: 500px; transform: rotate(-2deg); background: #FFFFFF; color: #19211F; border-radius: 14px; overflow: hidden; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.65)">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; background: #F8F4EA"><span style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 17px">Inquiries</span><span style="font-size: 12px; font-weight: 600; color: #8A6514; background: #F1D79C; padding: 3px 9px; border-radius: 999px">sample</span></div>
+<div style="display: grid; grid-template-columns: 64px 1fr 56px 108px; gap: 10px; padding: 8px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: #595E55"><span>DATE</span><span>EVENT</span><span>GUESTS</span><span>STATUS</span></div>
+<div style="display: grid; grid-template-columns: 64px 1fr 56px 108px; align-items: center; gap: 10px; padding: 10px 16px; border-top: 1px solid #EFE8D8; font-size: 13px"><span style="color: #595E55">Jun 13</span><span style="font-weight: 600">Wedding reception</span><span>120</span><span style="justify-self: start; font-size: 12px; font-weight: 700; background: #DCEBE2; color: #2E6B4E; padding: 3px 10px; border-radius: 999px">Good fit</span></div><div style="display: grid; grid-template-columns: 64px 1fr 56px 108px; align-items: center; gap: 10px; padding: 10px 16px; border-top: 1px solid #EFE8D8; font-size: 13px"><span style="color: #595E55">Jun 20</span><span style="font-weight: 600">Company dinner</span><span>45</span><span style="justify-self: start; font-size: 12px; font-weight: 700; background: #F1D79C; color: #19211F; padding: 3px 10px; border-radius: 999px">Held</span></div><div style="display: grid; grid-template-columns: 64px 1fr 56px 108px; align-items: center; gap: 10px; padding: 10px 16px; border-top: 1px solid #EFE8D8; font-size: 13px"><span style="color: #595E55">Jul 2</span><span style="font-weight: 600">Birthday party</span><span>30</span><span style="justify-self: start; font-size: 12px; font-weight: 700; background: #DCEBE2; color: #2E6B4E; padding: 3px 10px; border-radius: 999px">Good fit</span></div><div style="display: grid; grid-template-columns: 64px 1fr 56px 108px; align-items: center; gap: 10px; padding: 10px 16px; border-top: 1px solid #EFE8D8; font-size: 13px"><span style="color: #595E55">Jul 9</span><span style="font-weight: 600">Conference</span><span>400</span><span style="justify-self: start; font-size: 12px; font-weight: 700; background: #F3DDD5; color: #8F3524; padding: 3px 10px; border-radius: 999px">Outside rules</span></div><div style="display: grid; grid-template-columns: 64px 1fr 56px 108px; align-items: center; gap: 10px; padding: 10px 16px; border-top: 1px solid #EFE8D8; font-size: 13px"><span style="color: #595E55">Jul 18</span><span style="font-weight: 600">Rehearsal dinner</span><span>60</span><span style="justify-self: start; font-size: 12px; font-weight: 700; background: #F1D79C; color: #19211F; padding: 3px 10px; border-radius: 999px">Held</span></div>
+</div>
+<svg style="position: absolute; left: 600px; top: 150px" width="90" height="60" viewBox="0 0 90 60" fill="none" aria-hidden="true"><path d="M4 40 C 30 40, 50 18, 80 18" stroke="#E8B858" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 9"></path><path d="M70 10 L82 18 L70 26" stroke="#E8B858" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<div style="position: absolute; left: 690px; top: 92px; width: 320px; transform: rotate(2deg); background: #FFFFFF; color: #19211F; border-radius: 16px; padding: 20px 22px; box-sizing: border-box; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.65)">
+<div style="display: flex; gap: 12px; align-items: center; margin-bottom: 14px"><div style="width: 40px; height: 40px; border-radius: 10px; background: #19211F; display: flex; align-items: center; justify-content: center"><svg viewBox="4 10 112 45" width="26" aria-hidden="true"><path d="M26 43V36C26 20 41 10 60 10S94 20 94 36V43Z" fill="#E8B858"></path><rect x="26" y="36" width="68" height="7" fill="#F8F4EA"></rect><rect x="4" y="46" width="112" height="9" rx="4.5" fill="#E8B858"></rect></svg></div><div style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 700">New inquiry: good fit</span><span style="font-size: 12px; color: #595E55">2:14 PM · instant alert</span></div></div>
+<div style="font-size: 15px; font-weight: 700; margin-bottom: 8px">Wedding reception · 120 guests</div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">
+<div style="display: flex; gap: 8px"><span style="color: #2E6B4E; font-weight: 700">Matches your rules</span><span>· budget $8,000 to $10,000</span></div>
+<div>2 more held for your 3:00 PM review</div>
+</div>
+</div>
+<div style="position: absolute; left: 712px; top: 326px; transform: rotate(-1deg); background: #3A3422; color: #E8B858; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; padding: 7px 13px; border-radius: 999px">CHECKS ITSELF EVERY MORNING</div>
+</div></div>
+        <div class="sbody">
+          <span class="slabel">Automation, AI &amp; custom tools</span>
+          <h3>Get back the hours busywork eats.</h3>
+          <p class="sproof"><b>30 of 30</b> test inquiries sorted correctly by the inquiry system I built</p>
+          <ul><li>Reports and dashboards that build themselves</li><li>Inquiry sorting, follow-ups and review requests</li><li>AI that sorts messages and drafts replies</li></ul>
+          <div class="sfoot"><div><b>From $500</b><span>Per build · maintenance from $149/mo</span></div><a class="btn" href="#automation">See how it works</a></div>
+        </div>
+      </article>
+
     </div>
 
     <div class="audit">
@@ -383,7 +552,7 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
         <h3>Not sure where to start?</h3>
         <p>Send me your website or ad account and I'll reply with three specific things I'd fix first. Free, no strings attached.</p>
       </div>
-      <a class="btn" href="#contact">Ask for a free review</a>
+      <a class="btn ghost" href="#contact">Ask for a free review</a>
     </div>
   </div>
 </section>
@@ -612,6 +781,8 @@ function u(){var hrs=h.value*p.value*50;document.getElementById('o_hours').textC
 document.getElementById('r_hours').textContent=f(hrs);document.getElementById('r_days').textContent=f(Math.round(hrs/8));document.getElementById('r_cost').textContent='$'+f(hrs*r.value)}
 [h,p,r].forEach(function(e){e.addEventListener('input',u)});u();
 document.getElementById('c_go').addEventListener('click',function(){var t=document.getElementById('t_tools');var tk=document.getElementById('t_task');setTimeout(function(){tk&&tk.focus({preventScroll:true})},600);if(tk&&!tk.value)tk.placeholder='About '+h.value+' hours a week on... (describe the task)'})})();
+
+;(function(){function fit(){document.querySelectorAll('.sthumb.art').forEach(function(t){var i=t.querySelector('.art-in');if(i)i.style.transform='scale('+(t.clientWidth/1100)+')'})}fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);if(document.fonts)document.fonts.ready.then(fit)})();
 </script>
 </body>
 </html>
