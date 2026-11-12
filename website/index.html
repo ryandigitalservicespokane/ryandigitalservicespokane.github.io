@@ -213,6 +213,7 @@ h1{font-size:clamp(38px,4.6vw,58px);line-height:1.04}
 .calc .small{font-size:13px;color:#8d93a3;margin:0 0 20px}
 .btn.sun{background:var(--sun);border-color:var(--sun);color:var(--ink);justify-self:start;align-self:flex-start}.btn.sun:hover{background:#fff;border-color:#fff}
 @media(max-width:960px){.calc{grid-template-columns:1fr;padding:28px;gap:28px}}
+.pager{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:28px}.pbtn{font:inherit;font-size:16px;font-weight:600;padding:10px 20px;border-radius:999px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);cursor:pointer}.pbtn:hover:not(:disabled){background:var(--ink);color:#fff}.pbtn:disabled{opacity:.35;cursor:default}.pinfo{font-size:15px;color:var(--muted);min-width:90px;text-align:center}
 </style>
 </head>
 <body>
@@ -470,6 +471,7 @@ h1{font-size:clamp(38px,4.6vw,58px);line-height:1.04}
       <button class="tab" role="tab" aria-selected="false" data-cat="ads">Paid ads</button>
     </div>
     <div class="grid" id="grid" role="tabpanel"></div>
+<div class="pager" id="pager" aria-label="Work pages"></div>
   </div>
 </section>
 
@@ -550,14 +552,16 @@ const VIDEOS=["s-pSx87irgc","y68rguEh1ZI","e8SAu3o1U-8","HVWCRWLfjNA","zQjUukAQj
 const LABEL={pack:"Packaging design",logo:"Logo",design:"Design sample",email:"Email campaign",ads:"Ad results",photo:"Photograph"};
 const grid=document.getElementById('grid'),lb=document.getElementById('lb'),body=document.getElementById('lbbody');
 
-function render(cat){
-  grid.innerHTML='';
+var curCat='pack';function perPage(){return window.innerWidth<700?6:9}
+function render(cat,pg){if(pg===undefined||cat!==curCat)pg=0;curCat=cat;
+grid.innerHTML='';
   const items = cat==='video'
     ? VIDEOS.map(id=>({thumb:`https://img.youtube.com/vi/${id}/hqdefault.jpg`,video:id,alt:'Video project'}))
     : W[cat].split(' ').map(p=>!/^20\d\d\//.test(p)
         ? {thumb:p,full:p,alt:p.includes('/logo-')?'Logo':LABEL[cat],logo:p.includes('/logo-')}
         : {thumb:U+p+'?w=640',full:U+p+'?w=1600',alt:LABEL[cat]});
-  for(const it of items){
+  const PER=perPage(),pages=Math.ceil(items.length/PER);if(pg>=pages)pg=pages-1;
+for(const it of items.slice(pg*PER,pg*PER+PER)){
     const b=document.createElement('button');
     b.setAttribute('aria-label','Open '+it.alt.toLowerCase());
     if(it.video) b.className='play';
@@ -566,8 +570,15 @@ function render(cat){
     b.append(img);
     b.onclick=()=>open(it);
     grid.append(b);
-  }
 }
+renderPager(cat,pg,pages);
+}
+function renderPager(cat,pg,pages){var p=document.getElementById('pager');p.innerHTML='';if(pages<=1)return;
+var prev=document.createElement('button');prev.className='pbtn';prev.textContent='← Previous';prev.disabled=pg===0;prev.onclick=function(){go(cat,pg-1)};
+var info=document.createElement('span');info.className='pinfo';info.textContent='Page '+(pg+1)+' of '+pages;
+var next=document.createElement('button');next.className='pbtn';next.textContent='Next →';next.disabled=pg===pages-1;next.onclick=function(){go(cat,pg+1)};
+p.append(prev,info,next)}
+function go(cat,pg){render(cat,pg);var w=document.getElementById('work');window.scrollTo({top:w.getBoundingClientRect().top+window.scrollY-70,behavior:'smooth'})}
 function open(it){
   body.innerHTML = it.video
     ? `<iframe src="https://www.youtube-nocookie.com/embed/${it.video}?autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="Video project"></iframe>`
