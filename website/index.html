@@ -219,6 +219,14 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
 .brand{display:flex;align-items:center;gap:12px;line-height:1.1}.brand svg{width:64px;height:auto;flex:none;display:block}.brand small{margin-top:2px}.brand span{display:block}
 .bot,.s-alert .bt{background:var(--ink)!important}
 #contact{background:var(--ink)}
+
+#services{background:var(--paper)}#work{background:var(--mist)}#work .tab,#work .pbtn{background:#fff}#work .tab[aria-selected="true"]{background:var(--ink)}#playbook{background:var(--mist)}
+.sysrow{margin:56px 0;padding-top:40px;border-top:1px solid #34403C}.sys{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.sys div{border-top:3px solid var(--sun);padding-top:12px;color:#CFCBBF;font-size:16px}.sys b{display:block;color:#fff;font-size:19px;line-height:1.25;margin-bottom:6px;font-family:"Bricolage Grotesque",system-ui,sans-serif}.sysrow .for{font-size:15px;color:var(--sun);margin:18px 0 0}
+.case{margin-top:24px}.taudit{margin:0}
+.price span{display:block;margin-top:4px;line-height:1.4}.svc p a{color:var(--cobalt);font-weight:600}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}.contact-grid .cform{margin:0;max-width:none}#contact .direct{font-size:17px;margin:28px 0 14px}.mail{font-size:17px;margin:0;text-decoration-thickness:2px;text-underline-offset:4px;word-break:break-word}
+.pcard p{margin:10px 0 14px;font-size:16px;color:var(--muted)}.pcard i{font-style:normal;font-weight:600;font-size:15px;color:var(--cobalt)}.pcard{display:flex;flex-direction:column}.pcard i{margin-top:auto}
+@media(max-width:960px){.sys{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr;gap:32px}}
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%2319211F%22%2F%3E%3Cpath%20d%3D%22M17%2037V33C17%2022%2024%2016%2032%2016S47%2022%2047%2033V37Z%22%20fill%3D%22%23E8B858%22%2F%3E%3Crect%20x%3D%2217%22%20y%3D%2233%22%20width%3D%2230%22%20height%3D%224%22%20fill%3D%22%23F8F4EA%22%2F%3E%3Crect%20x%3D%228%22%20y%3D%2240%22%20width%3D%2248%22%20height%3D%226%22%20rx%3D%223%22%20fill%3D%22%23E8B858%22%2F%3E%3C%2Fsvg%3E">
 </head>
@@ -231,8 +239,8 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
       <a href="#work">Work</a>
       <a href="#services">Services</a>
       <a href="#automation">Automation</a>
-<a href="blog/">Blog</a>
 <a href="#about">About</a>
+<a href="blog/">Blog</a>
       <a class="btn" href="#contact">Get in touch</a>
     </nav>
   </div>
@@ -242,9 +250,9 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Independent studio by Ryan Smith · Spokane-based</span>
-<h1>More customers in the door, less busywork behind the counter.</h1>
-      <p class="lede">Ads, email, design and custom automation for small businesses. You get agency-level work from one experienced marketer, and you always talk to the person actually doing it. Fixed prices, up front.</p>
+      <span class="eyebrow">A one-person studio · Spokane, WA</span>
+<h1>Bring in more customers. Get your week back.</h1>
+      <p class="lede">Ads, email, design and custom automation for small businesses. Haki Digital is one experienced marketer, not an agency with account managers, so the person you talk to is the person doing the work. Fixed prices, up front.</p>
       <div class="cta-row">
         <a class="btn" href="#contact">Get a free review</a>
         <a class="btn ghost" href="#time-audit">What can I automate?</a>
@@ -272,9 +280,25 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
   </div>
 </section>
 
+<section id="work">
+  <div class="wrap">
+    <h2>Recent work</h2>
+    <p class="intro">A mix of recent projects: packaging, casino promotions, menus, logos, email campaigns and ad results. Pick a category to see more, or click anything to see it larger.</p>
+    <div class="tabs" role="tablist" aria-label="Work categories">
+      <button class="tab" role="tab" aria-selected="true" data-cat="feat">Featured</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="pack">Packaging</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="design">Design</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="email">Email</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="ads">Paid ads</button>
+    </div>
+    <div class="grid" id="grid" role="tabpanel"></div>
+<div class="pager" id="pager" aria-label="Work pages"></div>
+  </div>
+</section>
+
 <section id="services">
   <div class="wrap">
-    <h2>What I can do for you</h2>
+    <h2>Services</h2>
     <p class="intro">Every project gets a fixed price up front, so you know the cost before anything starts. These are starting points; I'll quote your project after a quick conversation.</p>
 
     <div class="svc">
@@ -283,7 +307,7 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
         <p>Meta (Facebook & Instagram), Google, Amazon, Reddit and LinkedIn ads set up to bring in customers, then watched and adjusted every week.</p>
         <ul><li>Account audit or new campaign setup</li><li>Ongoing management with a monthly results summary</li><li>Ad creative designed alongside the campaigns</li></ul>
       </div>
-      <div class="price"><b>$500/mo</b><span>management, starting at · ad spend paid directly by you</span></div>
+      <div class="price"><b>From $500/mo</b><span>for management. Ad spend is paid directly by you.</span></div>
     </div>
 
     <div class="svc">
@@ -292,7 +316,7 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
         <p>Emails that go out on their own when someone signs up, abandons a cart or hasn't visited in a while, plus regular campaigns that bring people back.</p>
         <ul><li>Welcome, abandoned-cart and win-back flows</li><li>Campaign design, copy and sending</li><li>Klaviyo, Mailchimp and similar platforms</li></ul>
       </div>
-      <div class="price"><b>$650</b><span>per automated flow, starting at · campaigns from $450/mo</span></div>
+      <div class="price"><b>From $650</b><span>per automated flow. Campaigns from $450/mo.</span></div>
     </div>
 
     <div class="svc">
@@ -301,16 +325,16 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
         <p>Social posts, menus, flyers, table tents, product labels, ad creative and logos, designed to get a response, not just to look nice.</p>
         <ul><li>Social media graphic packs</li><li>Print: menus, flyers, signage, labels</li><li>Logos and simple brand kits</li></ul>
       </div>
-      <div class="price"><b>$325</b><span>for 5 social graphics, starting at · logos from $350</span></div>
+      <div class="price"><b>From $325</b><span>for 5 social graphics. Logos from $350.</span></div>
     </div>
 
     <div class="svc">
       <h3>Automation, AI & custom tools</h3>
       <div>
-        <p>The behind-the-scenes work that eats your week, built to run on its own: reports, admin and back-office tasks, AI that sorts and summarizes for you, and custom tools built around how you actually work.</p>
-        <ul><li>Reports and dashboards that build themselves (sales, ads, email, expenses)</li><li>Every lead in one place, with an alert when a good one comes in</li><li>Booking and inquiry sorting, follow-ups and review requests</li><li>Inventory and stock tracking, low-stock alerts and reorder lists</li><li>Admin and back-office work: invoices, expenses and moving data between your tools</li><li>AI built in: sorting messages, summarizing reviews and feedback, pulling details out of invoices and documents, drafting replies for you to approve</li><li>Custom dashboards, web apps and internal tools</li></ul>
+        <p>The behind-the-scenes work that eats your week, built to run on its own. <a href="#automation">See how it works</a>.</p>
+        <ul><li>Reports and dashboards that build themselves</li><li>Inquiry sorting, follow-ups and review requests</li><li>Inventory alerts, invoices and moving data between your tools</li><li>AI that sorts messages and drafts replies for you to approve</li></ul>
       </div>
-      <div class="price"><b>$500</b><span>custom builds, starting at · priced by scope · maintenance plans from $149/mo</span></div>
+      <div class="price"><b>From $500</b><span>per build, priced by scope. Maintenance from $149/mo.</span></div>
     </div>
 
     <div class="audit">
@@ -344,68 +368,6 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
 <a class="btn sun" href="#time-audit" id="c_go">Find out what I can take off your plate</a>
 </div>
 </div>
-<div class="taudit" id="time-audit">
-<div class="taudit-copy">
-<h3>Free automation assessment</h3>
-<p>Describe the task that eats your time. Within one business day I'll reply with whether it can be automated, roughly how it would work and a ballpark price. No strings attached.</p>
-<ul class="checks"><li>Fixed price before any work starts</li><li>Runs on accounts you own</li><li>30 days of free fixes after launch</li></ul>
-</div>
-<div>
-<form class="tform" id="tform" action="https://docs.google.com/forms/d/e/1FAIpQLScRlQKAxS654vcQLcaBXyi_xYrfq_PVGwXmce6XlFr9coAE_A/formResponse" method="POST" target="hf2">
-<label>What takes up the most of your time?<textarea id="t_task" rows="4" required placeholder="Example: every Monday I copy last week's sales from Square into a spreadsheet and email it to my partner."></textarea></label>
-<div class="row2"><label>How often?<select id="t_freq"><option>Every day</option><option>A few times a week</option><option selected>Every week</option><option>Every month</option></select></label><label>Tools involved<input id="t_tools" placeholder="Square, Gmail, Google Sheets"></label></div>
-<div class="row2"><label>Your name<input name="entry.1873697728" required></label><label>Your email<input type="email" name="entry.970658160" required></label></div>
-<label>Business name or website<input name="entry.1198172665"></label>
-<input type="hidden" name="entry.1686757041" id="t_msg">
-<button class="btn" id="t_send" type="submit">Get my free assessment</button>
-</form>
-<p class="terr" id="terr" hidden>That didn't go through. Please try again, or email me at ryan.digitalservicespokane@gmail.com.</p>
-<p class="tthanks" id="tthanks" hidden>Got it, thanks. I'll look at what you sent and reply within one business day.</p>
-<iframe name="hf2" id="hf2" title="form" style="display:none"></iframe>
-</div>
-</div>
-<h3 class="subhead">Systems I run today</h3>
-    <div class="auto-grid">
-      <div class="builds">
-        <div class="build">
-          <h3>A marketing briefing that writes itself</h3>
-          <p>Three times a week it pulls ad and email results, checks return on ad spend, click-through rate and cost per purchase, flags ads that are wearing out, and posts a plain-English summary to the team's Slack.</p>
-          <p class="for">Built for a national e-commerce brand</p>
-        </div>
-        <div class="build">
-          <h3>One sheet for every sales channel</h3>
-          <p>Every weekday morning, a month-to-date performance sheet fills itself in from Amazon, Shopify, Google Ads and Microsoft Ads. No more logging into five dashboards.</p>
-          <p class="for">Built for a national e-commerce brand</p>
-        </div>
-        <div class="build">
-          <h3>Out-of-stock ad check</h3>
-          <p>Compares the inventory report against live ads and flags any ad still promoting a product that's sold out, so ad money isn't spent on things customers can't buy.</p>
-          <p class="for">Built for a national e-commerce brand</p>
-        </div>
-        <div class="build">
-          <h3>A custom real-time dashboard app</h3>
-          <p>A full web app with live market data, automated rules and a safe test mode, built from scratch and run on a laptop. Proof that "custom software" doesn't have to mean an agency invoice.</p>
-          <p class="for">Personal project</p>
-        </div>
-      </div>
-
-      <div class="slack" role="img" aria-label="Example of an automated marketing briefing posted to Slack, using sample data">
-        <div class="slack-head"><div class="bot"><svg viewBox="0 0 120 64" aria-hidden="true" style="width:24px"><path d="M26 43V36C26 20 41 10 60 10S94 20 94 36V43Z" fill="#E8B858"/><rect x="26" y="36" width="68" height="7" fill="#F8F4EA"/><rect x="4" y="46" width="112" height="9" rx="4.5" fill="#E8B858"/></svg></div><div><b>Marketing Briefing</b><br><span>Monday 9:00 AM · automated</span></div></div>
-        <strong>Weekly snapshot: Oct 27 – Nov 2</strong>
-        <h4>Ads</h4>
-        <ul>
-          <li>Spend $1,240 · Return on ad spend 3.4 <span class="ok">above 3.0 target</span></li>
-          <li>Best ad: "Weekend Brunch Carousel," cost per booking $8.10</li>
-          <li><span class="warn">Wearing out:</span> "Fall Menu Video," clicks down 38% in 2 weeks. Suggest fresh creative.</li>
-        </ul>
-        <h4>Email</h4>
-        <ul>
-          <li>Welcome flow brought in $2,180 · 41% open rate</li>
-          <li>Win-back flow is underperforming. Test a new subject line.</li>
-        </ul>
-        <span class="sample">Sample data for illustration</span>
-      </div>
-    </div>
 
     <div class="case" id="automation-demo">
 <div>
@@ -423,8 +385,8 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
 <div><b>Every day</b>it checks itself with a test inquiry each morning</div>
 <div><b>Yours</b>runs on your own Google account</div>
 </div>
-<p>Built for event venues, and the same setup works for quote requests, catering orders and appointment requests. Setup from $1,500, with an optional maintenance plan from $149/mo.</p>
-<a class="btn" href="#contact">Ask for a walkthrough</a>
+<p>Built for event venues, and the same setup works for quote requests, catering orders and appointment requests. Setup from $1,500.</p>
+<a class="btn" href="#time-audit">Ask about a setup like this</a>
 </div>
 <div class="slack" role="img" aria-label="Example of an instant good-fit inquiry alert, using sample data">
 <div class="slack-head"><div class="bot">R</div><div><b>New inquiry: good fit</b><br><span>Tuesday 2:14 PM · instant alert</span></div></div>
@@ -442,56 +404,36 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
 <span class="sample">Sample data for illustration</span>
 </div>
 </div>
-
-<div class="foryou">
-<h3>What I automate</h3>
-<div class="ideas">
-<div><b>Reports & dashboards</b>Sales, ad and email numbers in one sheet or one Monday email, instead of five logins.</div>
-<div><b>Leads & inquiries</b>Every inquiry in one place, sorted against your rules, with an instant alert for the good ones.</div>
-<div><b>Follow-ups & reviews</b>Quote follow-ups, appointment reminders and review requests that go out on schedule.</div>
-<div><b>Admin & back office</b>Invoices, expenses and customer details moved between your tools without retyping.</div>
-<div><b>Inventory & ordering</b>Low-stock alerts, reorder lists and ads paused when a product sells out.</div>
-<div><b>AI that reads for you</b>Sorting messages, summarizing reviews, pulling details out of documents and drafting replies for you to approve.</div>
+<div class="sysrow">
+<h3 class="subhead">Systems I run every week</h3>
+<div class="sys">
+<div><b>A marketing briefing that writes itself</b>Pulls ad and email results three times a week, flags ads that are wearing out and posts a plain-English summary to Slack.</div>
+<div><b>One sheet for every sales channel</b>A month-to-date sheet that fills itself in from Amazon, Shopify, Google Ads and Microsoft Ads every weekday.</div>
+<div><b>Out-of-stock ad check</b>Flags any ad still promoting a sold-out product, so ad money isn't spent on things customers can't buy.</div>
 </div>
-<h3 class="procs-h">How an automation project works</h3>
-<ol class="procs">
-<li><b>Free assessment</b>Tell me the task. I reply with whether it can be automated, how and a ballpark price.</li>
-<li><b>Fixed quote</b>Exactly what it will do, what it costs and when it's ready. No hourly surprises.</li>
-<li><b>Build & handoff</b>Built and tested on your accounts, with plain instructions for how it runs.</li>
-<li><b>Optional maintenance</b>30 days of free fixes, then a plan from $149/mo or fixes quoted as needed.</li>
-</ol>
-<a class="btn" href="#time-audit" style="margin-top:8px">Start with a free assessment</a>
-<p class="honest">You get a working system you own, running on your own accounts, with plain instructions for how it runs. Anything that doesn't work as agreed is fixed free for 30 days after launch. After that, an optional maintenance plan (from $149/mo) covers monitoring, repairs when a connected app changes, and a small update each month. Without a plan, fixes, changes and new features are quoted per request.</p>
-    </div>
+<p class="for">Built for a national e-commerce brand.</p>
+</div>
+<div class="taudit" id="time-audit">
+<div class="taudit-copy">
+<h3>Free automation assessment</h3>
+<p>Describe the task that eats your time. Within one business day I'll reply with whether it can be automated, roughly how it would work and a ballpark price. No strings attached.</p>
+<ul class="checks"><li>Fixed price before any work starts</li><li>Runs on accounts you own</li><li>30 days of free fixes after launch, then optional maintenance from $149/mo</li></ul>
+</div>
+<div>
+<form class="tform" id="tform" action="https://docs.google.com/forms/d/e/1FAIpQLScRlQKAxS654vcQLcaBXyi_xYrfq_PVGwXmce6XlFr9coAE_A/formResponse" method="POST" target="hf2">
+<label>What takes up the most of your time?<textarea id="t_task" rows="4" required placeholder="Example: every Monday I copy last week's sales from Square into a spreadsheet and email it to my partner."></textarea></label>
+<div class="row2"><label>How often?<select id="t_freq"><option>Every day</option><option>A few times a week</option><option selected>Every week</option><option>Every month</option></select></label><label>Tools involved<input id="t_tools" placeholder="Square, Gmail, Google Sheets"></label></div>
+<div class="row2"><label>Your name<input name="entry.1873697728" required></label><label>Your email<input type="email" name="entry.970658160" required></label></div>
+<label>Business name or website<input name="entry.1198172665"></label>
+<input type="hidden" name="entry.1686757041" id="t_msg">
+<button class="btn" id="t_send" type="submit">Get my free assessment</button>
+</form>
+<p class="terr" id="terr" hidden>That didn't go through. Please try again, or email me at ryan.digitalservicespokane@gmail.com.</p>
+<p class="tthanks" id="tthanks" hidden>Got it, thanks. I'll look at what you sent and reply within one business day.</p>
+<iframe name="hf2" id="hf2" title="form" style="display:none"></iframe>
+</div>
+</div>
   </div>
-</section>
-
-<section id="work">
-  <div class="wrap">
-    <h2>Recent work</h2>
-    <p class="intro">Product packaging, menus, casino promotions, logos, email campaigns and ad results. Click anything to see it larger.</p>
-    <div class="tabs" role="tablist" aria-label="Work categories">
-      <button class="tab" role="tab" aria-selected="true" data-cat="pack">Packaging</button>
-      <button class="tab" role="tab" aria-selected="false" data-cat="design">Design</button>
-      <button class="tab" role="tab" aria-selected="false" data-cat="email">Email</button>
-      <button class="tab" role="tab" aria-selected="false" data-cat="ads">Paid ads</button>
-    </div>
-    <div class="grid" id="grid" role="tabpanel"></div>
-<div class="pager" id="pager" aria-label="Work pages"></div>
-  </div>
-</section>
-
-<section id="playbook">
-<div class="wrap">
-<h2>From the Playbook</h2>
-<p class="intro">Plain-English guides on ads, email and automating the busywork.</p>
-<div class="pcards">
-<a class="pcard" href="blog/what-to-automate-first/"><span>Automation</span><b>What to automate first in a small business (and what to leave alone)</b></a>
-<a class="pcard" href="blog/answer-inquiries-faster/"><span>Leads & inquiries</span><b>Why slow replies cost you jobs, and how to answer every inquiry in minutes</b></a>
-<a class="pcard" href="blog/first-three-automated-emails/"><span>Email marketing</span><b>The 3 automated emails every local business should set up first</b></a>
-</div>
-<a class="btn ghost" href="blog/" style="margin-top:28px">All articles</a>
-</div>
 </section>
 
 <section id="process">
@@ -510,9 +452,10 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
   <div class="wrap about">
     <img src="https://smithryanportfolio.wordpress.com/wp-content/uploads/2024/09/headshotslowres-1.jpg?w=640" alt="Ryan Smith" loading="lazy">
     <div>
-      <h2>About me</h2>
-      <p>I'm a digital marketing specialist based in Spokane. My day job is running ads, email and reporting for a national e-commerce brand, and on the side I help local businesses do the same things without hiring an agency.</p>
-      <p>I've worked across very different businesses, from casino promotions and hotel campaigns to restaurant menus, concert venue promotions, spa marketing and cannabis packaging, so I'm comfortable with whatever your industry needs, including the rules that come with it. The industry changes from client to client, but what gets people to buy doesn't, and that's what I focus on.</p>
+      <h2>Who you'll work with</h2>
+      <p>I'm Ryan Smith, and Haki Digital is my studio. It's just me, on purpose: no account managers and no hand-offs, so you always talk to the person doing the work.</p>
+      <p>I also run ads, email and reporting for a national e-commerce brand, so the tactics I bring to your business are ones I use every week.</p>
+      <p>I've worked with casinos, hotels, restaurants, concert venues, spas and cannabis brands, so I'm used to industries with their own rules. The business changes from client to client, but what gets people to buy doesn't, and that's what I focus on.</p>
       <ul class="creds">
         <li>M.S. Digital Marketing & Design</li>
         <li>B.A. Marketing & Communications</li>
@@ -525,14 +468,32 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
   </div>
 </section>
 
+<section id="playbook">
+<div class="wrap">
+<h2>From the Playbook</h2>
+<p class="intro">Plain-English guides on ads, email and automating the busywork.</p>
+<div class="pcards">
+<a class="pcard" href="blog/what-to-automate-first/"><span>Automation</span><b>What to automate first in a small business (and what to leave alone)</b><p>A simple test for picking the task that pays off first.</p><i>Read the guide →</i></a>
+<a class="pcard" href="blog/answer-inquiries-faster/"><span>Leads & inquiries</span><b>Why slow replies cost you jobs, and how to answer every inquiry in minutes</b><p>Why speed wins the job, and a setup that keeps you fast.</p><i>Read the guide →</i></a>
+<a class="pcard" href="blog/first-three-automated-emails/"><span>Email marketing</span><b>The 3 automated emails every local business should set up first</b><p>Welcome, follow-up and win-back: what each one should say.</p><i>Read the guide →</i></a>
+</div>
+<a class="btn ghost" href="blog/" style="margin-top:28px">All articles</a>
+</div>
+</section>
+
 <section id="contact">
   <div class="wrap">
+<div class="contact-grid">
+<div>
     <h2>Let's talk about your business.</h2>
     <p>Tell me what you're working on, or just send your website and I'll send back a few ideas.</p>
-    <a class="mail" href="mailto:ryan.digitalservicespokane@gmail.com">ryan.digitalservicespokane@gmail.com</a><iframe name="hf" id="hf" title="form" style="display:none"></iframe><form class="cform" id="cform" action="https://docs.google.com/forms/d/e/1FAIpQLScRlQKAxS654vcQLcaBXyi_xYrfq_PVGwXmce6XlFr9coAE_A/formResponse" method="POST" target="hf"><input type="text" id="hp" style="display:none" tabindex="-1" autocomplete="off"><label>Your name<input name="entry.1873697728" required></label><label>Your email<input type="email" name="entry.970658160" required></label><label>Business name or website<input name="entry.1198172665"></label><label>What can I help with?<textarea name="entry.1686757041" rows="4" required></textarea></label><button class="btn send" type="submit">Send message</button></form><p class="ferr" id="ferr" hidden>That didn't go through. Please try again, or email me directly at ryan.digitalservicespokane@gmail.com.</p><p class="thanks" id="thanks">Thanks, I got your message. I'll reply within one business day. If you don't hear back, email me at ryan.digitalservicespokane@gmail.com.</p>
+    <p class="direct">Prefer email? <a class="mail" href="mailto:ryan.digitalservicespokane@gmail.com">ryan.digitalservicespokane@gmail.com</a></p>
     <div class="socials">
       <a href="https://www.linkedin.com/in/ryandotpng/" rel="noopener">LinkedIn</a>
     </div>
+</div>
+<div><iframe name="hf" id="hf" title="form" style="display:none"></iframe><form class="cform" id="cform" action="https://docs.google.com/forms/d/e/1FAIpQLScRlQKAxS654vcQLcaBXyi_xYrfq_PVGwXmce6XlFr9coAE_A/formResponse" method="POST" target="hf"><input type="text" id="hp" style="display:none" tabindex="-1" autocomplete="off"><label>Your name<input name="entry.1873697728" required></label><label>Your email<input type="email" name="entry.970658160" required></label><label>Business name or website<input name="entry.1198172665"></label><label>What can I help with?<textarea name="entry.1686757041" rows="4" required></textarea></label><button class="btn send" type="submit">Send message</button></form><p class="ferr" id="ferr" hidden>That didn't go through. Please try again, or email me directly at ryan.digitalservicespokane@gmail.com.</p><p class="thanks" id="thanks">Thanks, I got your message. I'll reply within one business day. If you don't hear back, email me at ryan.digitalservicespokane@gmail.com.</p></div>
+</div>
   </div>
 </section>
 </main>
@@ -547,6 +508,7 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
 <script>
 const U='https://smithryanportfolio.wordpress.com/wp-content/uploads/';
 const W={
+ feat:"img/rd-bestof2025.jpg 2024/09/screenshot-62.png img/rd-123.jpg 2024/09/stc-1024_aug2023_socialmedia_24kmagicannounce.png 2024/09/tacovado_mainmenu_letter_8-276.png img/logo-srbc.png 2025/03/ilovethe90semailoffer.jpg rd-poster-hashburger.jpg",
  pack:"img/rd-123.jpg img/rd-129.jpg img/rd-131.jpg img/rd-133.jpg img/rd-135.jpg img/rd-139.jpg img/rd-141.jpg img/rd-144.jpg img/rd-146.jpg img/rd-148.jpg img/rd-1.jpg img/rd-12.jpg img/rd-13.jpg img/rd-15.jpg img/rd-17.jpg img/rd-18.jpg img/rd-110.jpg img/rd-111.jpg img/rd-112.jpg img/rd-113.jpg img/rd-121.jpg img/rd-122.jpg img/rd-124.jpg img/rd-127.jpg img/rd-130.jpg img/rd-132.jpg img/rd-134.jpg img/rd-138.jpg img/rd-140.jpg img/rd-143.jpg img/rd-145.jpg img/rd-147.jpg img/cloudchaser-pack.jpg 2024/09/cloudchasersvape_mock3.png 2024/09/cloudchasersvape_mock4.png 2024/09/superlemonhaze_newdie_v3.jpg 2024/09/grapepie_newdie_v3.jpg",
  design:"img/rd-bestof2025.jpg rd-poster-hashburger.jpg img/ecom-23.jpg img/ecom-1.jpg img/ecom-24.jpg img/ecom-29.jpg img/ecom-5.jpg img/logo-srbc.png img/logo-gridiron.png 2024/09/stc-1024_aug2023_socialmedia_24kmagicannounce.png 2024/09/stc-1024_aug2023_socialmedia_floridaannounce.png 2024/09/socialdropkick_soldout.png 2024/09/stc-1024_aug2023_socialmedia_ellekingannounce.png 2024/09/sportsbook_odds.png 2024/09/table-tents-update-1.jpg 2024/09/table-tents-update-2.jpg 2024/09/dame-time.png 2024/09/cruise_postcard-1.png 2024/09/cruise_postcard-2.png 2024/09/display_4x3_portrait.png 2024/09/gamble_responsibly-1.jpg 2024/09/gamble_responsibly-2.jpg 2024/09/3peaksflyer.jpg 2024/09/tacovado_breakfastmenu_8-272.png 2024/09/tacovado_breakfastmenu_8-27.png 2024/09/tacovado_mainmenu_letter_8-276.png 2024/09/tacovado_veganmenu.png 2024/09/cover_image5.png 2024/09/stc-1004_aug2023_houseadvance.png 2024/09/stc-1004_aug2023_houseadvance2.png 2024/09/stc-1004_aug2023_houseadvance3.png 2024/09/stc-1004_aug2023_houseadvance4.png 2024/09/stc-1004_aug2023_houseadvance5.png 2024/09/stc-1004_aug2023_houseadvance6.png 2025/03/2024-igfb-posts.png 2025/03/1.png 2025/03/customer-review-instagram.png 2025/03/5.png 2025/03/7.png 2025/03/5-1.png 2025/03/25.png 2025/03/cable-academy.png",
 
@@ -555,10 +517,10 @@ const W={
  photo:"2024/09/searedsalmon_july2023-1.jpg 2024/09/bbqporkribs_july2023-2.jpg 2024/09/chopped_salad_july2023-1.jpg 2024/09/food_6_27-1.jpg 2024/09/biggame_2024-3.jpg 2024/09/058a4029.jpg 2024/09/an8a7288.jpg 2024/09/hunterhayes-4.jpg 2024/09/hunterhayes-2.jpg 2024/09/an8a3415.jpg 2024/09/an8a3515.jpg 2024/09/058a3278.jpg 2024/09/rocio-19.png 2024/09/rocio-16.png 2024/09/qgroup_grad_2023-23.png 2024/09/london.png 2024/09/blakeheashot3.png 2024/09/lilly-13.png 2024/09/copy-of-marlee_grad_2406-3.jpg 2024/09/blakeandaidan_grad_2023-9.png"
 };
 const VIDEOS=["s-pSx87irgc","y68rguEh1ZI","e8SAu3o1U-8","HVWCRWLfjNA","zQjUukAQjfs","47p_AFl8rMA"];
-const LABEL={pack:"Packaging design",logo:"Logo",design:"Design sample",email:"Email campaign",ads:"Ad results",photo:"Photograph"};
+const LABEL={feat:"Work sample",pack:"Packaging design",logo:"Logo",design:"Design sample",email:"Email campaign",ads:"Ad results",photo:"Photograph"};
 const grid=document.getElementById('grid'),lb=document.getElementById('lb'),body=document.getElementById('lbbody');
 
-var curCat='pack';function perPage(){return window.innerWidth<700?6:9}
+var curCat='feat';function perPage(){return window.innerWidth<700?6:9}
 function render(cat,pg){if(pg===undefined||cat!==curCat)pg=0;curCat=cat;
 grid.innerHTML='';
   const items = cat==='video'
@@ -599,7 +561,7 @@ document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
   document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));
   render(t.dataset.cat);
 });
-render('pack');
+render('feat');
 document.getElementById('yr').textContent=new Date().getFullYear();if(/sent=1/.test(location.search))document.getElementById('contact').classList.add('sent');var cf=document.getElementById('cform'),hf=document.getElementById('hf'),sb=cf.querySelector('.send'),fe=document.getElementById('ferr'),pending=false,timer;function resetBtn(){sb.disabled=false;sb.textContent='Send message'}hf.addEventListener('load',function(){if(!pending)return;pending=false;clearTimeout(timer);resetBtn();document.getElementById('contact').classList.add('sent');cf.reset()});cf.addEventListener('submit',function(e){if(document.getElementById('hp').value){e.preventDefault();return}pending=true;fe.hidden=true;sb.disabled=true;sb.textContent='Sending…';timer=setTimeout(function(){if(!pending)return;pending=false;resetBtn();fe.hidden=false},10000)});
 ;(function(){var f=document.getElementById('tform'),h=document.getElementById('hf2'),b=document.getElementById('t_send'),e=document.getElementById('terr'),p=false,t;
 f.addEventListener('submit',function(){document.getElementById('t_msg').value='[Automation assessment] Task: '+document.getElementById('t_task').value+' | How often: '+document.getElementById('t_freq').value+' | Tools: '+(document.getElementById('t_tools').value||'not given');p=true;e.hidden=true;b.disabled=true;b.textContent='Sending…';t=setTimeout(function(){if(!p)return;p=false;b.disabled=false;b.textContent='Get my free assessment';e.hidden=false},10000)});
