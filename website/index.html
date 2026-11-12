@@ -228,6 +228,47 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
 .pcard p{margin:10px 0 14px;font-size:16px;color:var(--muted)}.pcard i{font-style:normal;font-weight:600;font-size:15px;color:var(--cobalt)}.pcard{display:flex;flex-direction:column}.pcard i{margin-top:auto}
 @media(max-width:960px){.sys{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr;gap:32px}}
 .grid.even{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;columns:auto}.grid.even button{margin:0;aspect-ratio:1/1}.grid.even img{width:100%;height:100%;object-fit:cover;object-position:top}.grid.even .logo img{object-fit:contain}@media(max-width:700px){.grid.even{grid-template-columns:1fr 1fr;gap:10px}}
+
+/* ===== design pass ===== */
+:root{--line2:#968B74}
+/* 2. one background, hairline section dividers */
+#services,#work,#process,#playbook,#about{background:var(--paper)}
+#services,#process,#playbook,#about{border-top:1px solid var(--line)}
+#work .tab,#work .pbtn{background:var(--paper)}
+/* 1. rust = clickable only (stats excepted) */
+.eyebrow{color:var(--ink)}
+.steps div::before{background:var(--ink)}
+.flow li::before{background:var(--sun);color:var(--ink)}
+.checks li::before{border-color:var(--ink)}
+.pcard span{color:var(--ink)}
+/* 3. divider vocabulary: hairlines + soft cards */
+.audit{background:#fff;border:1px solid var(--line);border-radius:14px}
+.pcard{background:#fff;border:1px solid var(--line)}.pcard:hover{border-color:var(--line2)}
+.sys div{border-top:1px solid #34403C;padding-top:14px}
+.industries{border-left:0;padding-left:0}
+/* 4. type scale: h3 28 / 22 ; text 20 / 18 / 16 / 14 */
+.case h3,.taudit h3{font-size:28px}
+.svc h3,.steps h3,.calc h3,.subhead,.audit h3,.build h3{font-size:22px}
+.pcard b{font-size:20px}
+.lede{font-size:20px}.intro{font-size:18px}#contact p{font-size:18px}
+.price{text-align:left}.price b{font-size:20px}.price span{font-size:16px}
+.tab,.pbtn,.pinfo,.tform label,.calc label,.build .for,.sysrow .for,.stats div,.case .tag,.slack,.slack-head b,.creds li,.pcard i{font-size:16px}
+.sample,.calc .small,.slack-head span,footer,.stack .chip,.eyebrow,.pcard span{font-size:14px}
+.calc .small{color:#B5B9AF}
+/* 5. one primary button style */
+.btn.sun,.btn.send{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.btn.sun:hover,.btn.send:hover{background:var(--cobalt-deep);border-color:var(--cobalt-deep);color:#fff}
+/* 6. control contrast (3:1) */
+.tab{border-color:var(--line2)}
+.tform input,.tform textarea,.tform select{border-color:var(--line2)}
+.pbtn:disabled{opacity:.45}
+/* 7. work grid: justified rows */
+.grid{display:flex;flex-wrap:wrap;gap:16px;columns:auto}
+.grid::after{content:"";flex-grow:999}
+.grid button{margin:0;flex:1 1 230px;min-width:0}
+.grid img{width:100%;height:auto}
+.grid .logo{padding:24px}
+.stack .card{box-shadow:0 12px 28px -16px rgba(25,33,31,.35)}
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%2319211F%22%2F%3E%3Cpath%20d%3D%22M17%2037V33C17%2022%2024%2016%2032%2016S47%2022%2047%2033V37Z%22%20fill%3D%22%23E8B858%22%2F%3E%3Crect%20x%3D%2217%22%20y%3D%2233%22%20width%3D%2230%22%20height%3D%224%22%20fill%3D%22%23F8F4EA%22%2F%3E%3Crect%20x%3D%228%22%20y%3D%2240%22%20width%3D%2248%22%20height%3D%226%22%20rx%3D%223%22%20fill%3D%22%23E8B858%22%2F%3E%3C%2Fsvg%3E">
 </head>
@@ -267,7 +308,7 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
 <span class="chip" style="right:6%;top:214px">Packaging &amp; design</span>
 <div class="card s-alert"><div class="hd"><div class="bt"><svg viewBox="0 0 120 64" aria-hidden="true" style="width:24px"><path d="M26 43V36C26 20 41 10 60 10S94 20 94 36V43Z" fill="#E8B858"/><rect x="26" y="36" width="68" height="7" fill="#F8F4EA"/><rect x="4" y="46" width="112" height="9" rx="4.5" fill="#E8B858"/></svg></div><div><b>New inquiry: good fit</b><br><span>2:14 PM · instant alert · sample</span></div></div>
 <strong>Wedding reception · 120 guests</strong><ul><li>Budget $8,000–$10,000 · matches your rules</li><li>2 more held for your 3:00 PM review</li></ul></div>
-<span class="chip" style="right:6%;bottom:150px;background:var(--cobalt)">Automation</span>
+<span class="chip" style="right:6%;bottom:150px;background:var(--sun);color:var(--ink)">Automation</span>
 </div>
   </div>
 </section>
@@ -533,7 +574,7 @@ for(const it of items.slice(pg*PER,pg*PER+PER)){
     b.setAttribute('aria-label','Open '+it.alt.toLowerCase());
     if(it.video) b.className='play';
     if(it.logo){b.className='logo'; if(it.thumb.includes('gridiron')) b.style.background='#000';}
-    const img=new Image();img.src=it.thumb;img.alt=it.alt;img.loading='lazy';
+    const img=new Image();img.onload=function(){var ar=img.naturalWidth/img.naturalHeight||1;b.style.flexGrow=ar;b.style.flexBasis=(ar*230)+'px'};img.src=it.thumb;img.alt=it.alt;img.loading='lazy';
     b.append(img);
     b.onclick=()=>open(it);
     grid.append(b);
