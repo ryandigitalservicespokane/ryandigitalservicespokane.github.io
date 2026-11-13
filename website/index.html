@@ -300,8 +300,19 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
 /* straw-hat section divider (light-to-light breaks only) */
 #work,#services,#about,#playbook{border-top:0;position:relative}.proof{border-bottom:0}
 #work::before,#services::before,#about::before,#playbook::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line)}
-#work::after,#services::after,#about::after,#playbook::after{content:"";position:absolute;left:50%;top:-22px;width:56px;height:23px;transform:translateX(-50%);background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%224%2010%20112%2045%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22c%22%3E%3Cpath%20d%3D%22M26%2043V36C26%2020%2041%2010%2060%2010S94%2020%2094%2036V43Z%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cpath%20d%3D%22M26%2043V36C26%2020%2041%2010%2060%2010S94%2020%2094%2036V43Z%22%20fill%3D%22%23E8B858%22/%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%20stroke%3D%22%23C9952F%22%20stroke-width%3D%222.5%22%3E%3Cpath%20d%3D%22M20%2024h80M20%2031h80%22/%3E%3C/g%3E%3Crect%20x%3D%2226%22%20y%3D%2236%22%20width%3D%2268%22%20height%3D%227%22%20fill%3D%22%2319211F%22/%3E%3Crect%20x%3D%224%22%20y%3D%2246%22%20width%3D%22112%22%20height%3D%229%22%20rx%3D%224.5%22%20fill%3D%22%23C9952F%22/%3E%3C/svg%3E") no-repeat center bottom/56px auto}
+#work::after,#testimonials::after,#services::after,#about::after,#playbook::after{content:"";position:absolute;left:50%;top:-22px;width:56px;height:23px;transform:translateX(-50%);background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%224%2010%20112%2045%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22c%22%3E%3Cpath%20d%3D%22M26%2043V36C26%2020%2041%2010%2060%2010S94%2020%2094%2036V43Z%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cpath%20d%3D%22M26%2043V36C26%2020%2041%2010%2060%2010S94%2020%2094%2036V43Z%22%20fill%3D%22%23E8B858%22/%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%20stroke%3D%22%23C9952F%22%20stroke-width%3D%222.5%22%3E%3Cpath%20d%3D%22M20%2024h80M20%2031h80%22/%3E%3C/g%3E%3Crect%20x%3D%2226%22%20y%3D%2236%22%20width%3D%2268%22%20height%3D%227%22%20fill%3D%22%2319211F%22/%3E%3Crect%20x%3D%224%22%20y%3D%2246%22%20width%3D%22112%22%20height%3D%229%22%20rx%3D%224.5%22%20fill%3D%22%23C9952F%22/%3E%3C/svg%3E") no-repeat center bottom/56px auto}
 .book-link{color:var(--cobalt);font-weight:600;text-underline-offset:3px}
+
+/* testimonials */
+#testimonials{position:relative}
+#testimonials::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line)}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.quote{margin:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:36px 34px 30px;display:flex;flex-direction:column;position:relative}
+.quote::before{content:"\201C";position:absolute;top:6px;left:28px;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:84px;line-height:1;color:var(--sun)}
+.quote blockquote{margin:28px 0 24px;font-size:18px;line-height:1.65;color:var(--ink)}
+.quote figcaption{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.quote figcaption b{font-size:17px}.quote figcaption span{font-size:14px;color:var(--muted)}
+@media(max-width:860px){.quotes{grid-template-columns:1fr}}
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%2319211F%22%2F%3E%3Cpath%20d%3D%22M17%2037V33C17%2022%2024%2016%2032%2016S47%2022%2047%2033V37Z%22%20fill%3D%22%23E8B858%22%2F%3E%3Crect%20x%3D%2217%22%20y%3D%2233%22%20width%3D%2230%22%20height%3D%224%22%20fill%3D%22%23F8F4EA%22%2F%3E%3Crect%20x%3D%228%22%20y%3D%2240%22%20width%3D%2248%22%20height%3D%226%22%20rx%3D%223%22%20fill%3D%22%23E8B858%22%2F%3E%3C%2Fsvg%3E">
 </head>
@@ -559,6 +570,23 @@ h1,h2,h3,.brand,.proof b,.price b,.calc .big,.pcard b,.card h2,.steps div::befor
         <p>Send me your website or ad account and I'll reply with three specific things I'd fix first. Free, no strings attached.</p>
       </div>
       <a class="btn ghost" href="#contact">Ask for a free review</a>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <span class="eyebrow">Kind words</span>
+    <h2>From people I've worked with</h2>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>Ryan ran our email program during one of the busiest stretches we've had: a bigger casino floor, a brand-new concert venue and the hotel opening. He kept a huge list of guests informed and coming back, turned around event emails fast when plans changed, and kept everything on-brand. He's organized, he gets the business side, and he's easy to work with. I'd recommend him to anyone.</blockquote>
+        <figcaption><b>Gary T.</b><span>Director of Entertainment, Spokane Tribe Resort &amp; Casino</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>Working with Ryan was simple. You told him what you needed and he figured out the best way to get it done. He handled creative for TV, radio, digital, print and billboards, and helped make sure our ad budget went where it would actually bring people in. When we launched the new venue and hotel, he was the one keeping campaigns moving and on time. Talented, reliable and genuinely good at what he does.</blockquote>
+        <figcaption><b>Triston A.</b><span>Director of Marketing, Spokane Tribe Resort &amp; Casino</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
